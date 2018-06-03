@@ -3,8 +3,11 @@ package com.hywa.pricepublish.dao.mapper;
 import com.hywa.pricepublish.dao.entity.Role;
 import com.hywa.pricepublish.dao.entity.RoleExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface RoleMapper {
     int countByExample(RoleExample example);
 
