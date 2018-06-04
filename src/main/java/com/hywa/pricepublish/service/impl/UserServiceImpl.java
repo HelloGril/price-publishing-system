@@ -1,5 +1,6 @@
 package com.hywa.pricepublish.service.impl;
 
+import com.hywa.pricepublish.common.UUIDUtils;
 import com.hywa.pricepublish.dao.entity.User;
 import com.hywa.pricepublish.dao.entity.UserExample;
 import com.hywa.pricepublish.dao.mapper.UserMapper;
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(String userName, String psw, int authority) {
         User user = new User();
+        user.setId(UUIDUtils.randomUUID());
         user.setUsername(userName);
         user.setPassword(psw);
         user.setAuthority(authority);
@@ -26,8 +28,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByName(String username) {
-        return null;
+    public User findByName(String userName) {
+        return userMapper.selectByUserName(userName);
     }
 
     @Override

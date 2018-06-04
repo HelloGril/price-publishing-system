@@ -1,6 +1,6 @@
 package com.hywa.pricepublish.controller.login;
 
-import com.hywa.pricepublish.common.ConstantUtils;
+import com.hywa.pricepublish.common.ConstantPool;
 import com.hywa.pricepublish.representation.ResponseBase;
 import com.hywa.pricepublish.representation.UserRep;
 import com.hywa.pricepublish.service.UserService;
@@ -26,7 +26,7 @@ public class UserController {
         userService.save(userName, psw, authority);
 
         ResponseBase<UserRep> userRepResponseBase = new ResponseBase<>();
-        userRepResponseBase.setRetHead(ConstantUtils.SUCCESS, "注册成功");
+        userRepResponseBase.setRetHead(ConstantPool.SUCCESS, "注册成功");
         return new ResponseEntity<>(userRepResponseBase, HttpStatus.OK);
     }
 }

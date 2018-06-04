@@ -1,7 +1,6 @@
 package com.hywa.pricepublish.service;
 
 import com.hywa.pricepublish.dao.entity.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
