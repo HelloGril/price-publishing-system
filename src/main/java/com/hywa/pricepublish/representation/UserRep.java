@@ -3,21 +3,36 @@
 package com.hywa.pricepublish.representation;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class UserRep implements Serializable {
     private static final long serialVersionUID = -4963266899668807475L;
+    private int age;
     private String uid;
     private String name;
-    private int authority;
+    private String realName;
+    private String phone;
+    private String sex;
+    private String jobTitle;
 
     public UserRep() {
     }
 
-    public UserRep(String uid, String name, int authority) {
-        this.uid = uid;
-        this.name = name;
-        this.authority = authority;
+    public UserRep(String uid, String name, String realName, String phone, String sex, String jobTitle, int age) {
+        this.setUid(uid);
+        this.setName(name);
+        this.setRealName(realName);
+        this.setPhone(phone);
+        this.setSex(sex);
+        this.setJobTitle(jobTitle);
+        this.setAge(age);
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getUid() {
@@ -36,21 +51,36 @@ public class UserRep implements Serializable {
         this.name = name;
     }
 
-    public int getAuthority() {
-        return authority;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setAuthority(int authority) {
-        this.authority = authority;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
-    @Override
-    public String toString() {
-        return "UserRep{" +
-                "uid='" + uid + '\'' +
-                ", name='" + name + '\'' +
-                ", authority=" + authority +
-                '}';
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 }
 

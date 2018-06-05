@@ -1,7 +1,7 @@
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\config\RedisConfig.java
+C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\common\MD5Utils.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\config\MybatisPlusConfig.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\service\impl\RoleServiceImpl.java
-C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\common\ConstantUtils.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\common\StringUtils.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\config\ShiroConfig.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\dao\entity\UserExample.java
@@ -10,6 +10,7 @@ C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepubl
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\config\MyShiroRealm.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\representation\ResponseBase.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\dao\entity\Permission.java
+C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\common\ConstantPool.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\controller\login\IndexController.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\controller\login\UserController.java
 C:\Users\LongLi\Desktop\price-publishing-system\src\main\java\com\hywa\pricepublish\service\UserService.java

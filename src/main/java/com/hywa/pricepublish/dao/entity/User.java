@@ -9,15 +9,21 @@ public class User {
 
     private String password;
 
-    private String email;
+    private String phone;
 
     private Short status;
 
     private Date createTime;
 
-    private Date lastLoginTime;
+    private String realName;
 
-    private Integer authority;
+    private String sex;
+
+    private Integer age;
+
+    private String jobTitle;
+
+    private String address;
 
     public String getId() {
         return id;
@@ -43,12 +49,12 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public Short getStatus() {
@@ -67,19 +73,43 @@ public class User {
         this.createTime = createTime;
     }
 
-    public Date getLastLoginTime() {
-        return lastLoginTime;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
+    public void setRealName(String realName) {
+        this.realName = realName == null ? null : realName.trim();
     }
 
-    public Integer getAuthority() {
-        return authority;
+    public String getSex() {
+        return sex;
     }
 
-    public void setAuthority(Integer authority) {
-        this.authority = authority;
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle == null ? null : jobTitle.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 }

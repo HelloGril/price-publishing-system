@@ -7,9 +7,9 @@ import java.util.Map;
 
 
 public interface UserService {
-    List<User> selectByMap(Map<String, Object> map);
-
     User findByName(String username);
 
-    void save(String userName, String psw, int authority);
+    void save(String userName, String psw);
+
+    Map<String,List<String>> findRolesAndPermissionsByUserName(String username);
 }

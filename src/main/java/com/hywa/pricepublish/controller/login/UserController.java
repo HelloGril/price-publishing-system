@@ -21,9 +21,8 @@ public class UserController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseEntity<ResponseBase> login(@RequestParam(required = true) String userName,
-                                              @RequestParam(required = true) String psw,
-                                              @RequestParam(required = true) int authority) {
-        userService.save(userName, psw, authority);
+                                              @RequestParam(required = true) String psw) {
+        userService.save(userName, psw);
 
         ResponseBase<UserRep> userRepResponseBase = new ResponseBase<>();
         userRepResponseBase.setRetHead(ConstantPool.SUCCESS, "注册成功");

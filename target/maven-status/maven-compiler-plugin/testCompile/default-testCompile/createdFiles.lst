@@ -1,2 +1,3 @@
 com\hywa\pricepublish\PricePublishingSystemApplicationTests.class
 com\hywa\pricepublish\service\impl\UserServiceTest.class
+com\hywa\pricepublish\controller\login\IndexControllerTest.class

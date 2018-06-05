@@ -1,11 +1,9 @@
 package com.hywa.pricepublish.dao.entity;
 
-import java.util.Date;
-
 public class Permission {
     private String id;
 
-    private String pid;
+    private String parentId;
 
     private String name;
 
@@ -17,10 +15,6 @@ public class Permission {
 
     private Short status;
 
-    private Date gmtCreate;
-
-    private Date gmtModified;
-
     public String getId() {
         return id;
     }
@@ -29,12 +23,12 @@ public class Permission {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getPid() {
-        return pid;
+    public String getParentId() {
+        return parentId;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid == null ? null : pid.trim();
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
     public String getName() {
@@ -75,21 +69,5 @@ public class Permission {
 
     public void setStatus(Short status) {
         this.status = status;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 }

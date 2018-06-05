@@ -1,7 +1,5 @@
 package com.hywa.pricepublish.dao.entity;
 
-import java.util.Date;
-
 public class Role {
     private String id;
 
@@ -9,9 +7,7 @@ public class Role {
 
     private String description;
 
-    private Date gmtCreate;
-
-    private Date gmtModified;
+    private String roleCode;
 
     public String getId() {
         return id;
@@ -37,19 +33,11 @@ public class Role {
         this.description = description == null ? null : description.trim();
     }
 
-    public Date getGmtCreate() {
-        return gmtCreate;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode == null ? null : roleCode.trim();
     }
 }

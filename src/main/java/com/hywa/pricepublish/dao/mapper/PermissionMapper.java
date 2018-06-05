@@ -2,10 +2,10 @@ package com.hywa.pricepublish.dao.mapper;
 
 import com.hywa.pricepublish.dao.entity.Permission;
 import com.hywa.pricepublish.dao.entity.PermissionExample;
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface PermissionMapper {
@@ -30,4 +30,6 @@ public interface PermissionMapper {
     int updateByPrimaryKeySelective(Permission record);
 
     int updateByPrimaryKey(Permission record);
+
+    List<String> selectByRoleId(String roleId);
 }

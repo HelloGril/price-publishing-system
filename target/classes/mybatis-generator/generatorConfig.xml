@@ -56,5 +56,7 @@
                         replaceString=""/>-->
         </table>
         <!--<table tableName="sys_user" domainObjectName="User"></table>-->
+        <!--<table tableName="sys_role" domainObjectName="Role"></table>-->
+        <!--<table tableName="sys_permission" domainObjectName="Permission"></table>-->
     </context>
 </generatorConfiguration>
