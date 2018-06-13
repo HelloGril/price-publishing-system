@@ -1,29 +1,59 @@
 package com.hywa.pricepublish.dao.entity;
 
+import com.hywa.pricepublish.common.MD5Utils;
+import com.hywa.pricepublish.common.Sex;
+import com.hywa.pricepublish.common.UUIDUtils;
+import com.hywa.pricepublish.common.exception.SexInputException;
+import com.hywa.pricepublish.representation.UserRep;
+
 import java.util.Date;
 
 public class User {
     private String id;
 
-    private String username;
+    private String name;
+
+    private Short sex;
+
+    private String telephone;
 
     private String password;
 
-    private String phone;
+    private String account;
 
-    private Short status;
+    private String email;
+
+    private Date updateTime;
 
     private Date createTime;
 
-    private String realName;
+    private String updateUser;
 
-    private String sex;
+    private String createUser;
+
+    private Short isDel;
+
+    private String job;
+
+    private String workUnit;
 
     private Integer age;
 
-    private String jobTitle;
+    public User() {
+    }
 
-    private String address;
+    public User(UserRep userRep) throws SexInputException {
+        this.setId(UUIDUtils.randomUUID());
+        this.setName(userRep.getName());
+        this.setPassword(MD5Utils.md5(userRep.getPwd()));
+        this.setName(userRep.getName());
+        this.setAge(userRep.getAge());
+        this.setWorkUnit(userRep.getWorkUnit());
+        this.setJob(userRep.getJobTitle());
+        if (userRep.getSex() != null)
+            this.setSex(Sex.getIndex(userRep.getSex()));
+    }
+
 
     public String getId() {
         return id;
@@ -33,12 +63,28 @@ public class User {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Short getSex() {
+        return sex;
+    }
+
+    public void setSex(Short sex) {
+        this.sex = sex;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone == null ? null : telephone.trim();
     }
 
     public String getPassword() {
@@ -49,20 +95,28 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getPhone() {
-        return phone;
+    public String getAccount() {
+        return account;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setAccount(String account) {
+        this.account = account == null ? null : account.trim();
     }
 
-    public Short getStatus() {
-        return status;
+    public String getEmail() {
+        return email;
     }
 
-    public void setStatus(Short status) {
-        this.status = status;
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     public Date getCreateTime() {
@@ -73,20 +127,44 @@ public class User {
         this.createTime = createTime;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getUpdateUser() {
+        return updateUser;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName == null ? null : realName.trim();
+    public void setUpdateUser(String updateUser) {
+        this.updateUser = updateUser == null ? null : updateUser.trim();
     }
 
-    public String getSex() {
-        return sex;
+    public String getCreateUser() {
+        return createUser;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
+    public void setCreateUser(String createUser) {
+        this.createUser = createUser == null ? null : createUser.trim();
+    }
+
+    public Short getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Short isDel) {
+        this.isDel = isDel;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job == null ? null : job.trim();
+    }
+
+    public String getWorkUnit() {
+        return workUnit;
+    }
+
+    public void setWorkUnit(String workUnit) {
+        this.workUnit = workUnit == null ? null : workUnit.trim();
     }
 
     public Integer getAge() {
@@ -95,21 +173,5 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle == null ? null : jobTitle.trim();
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
     }
 }

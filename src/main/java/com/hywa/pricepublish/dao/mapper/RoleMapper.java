@@ -2,12 +2,9 @@ package com.hywa.pricepublish.dao.mapper;
 
 import com.hywa.pricepublish.dao.entity.Role;
 import com.hywa.pricepublish.dao.entity.RoleExample;
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
-@Mapper
 public interface RoleMapper {
     int countByExample(RoleExample example);
 
@@ -30,7 +27,4 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
-
-    List<Role> selectByUserId(String userId);
-
 }

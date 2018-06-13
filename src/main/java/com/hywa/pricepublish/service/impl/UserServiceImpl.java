@@ -1,20 +1,19 @@
 package com.hywa.pricepublish.service.impl;
 
-import com.hywa.pricepublish.common.UUIDUtils;
-import com.hywa.pricepublish.dao.entity.Role;
+import com.hywa.pricepublish.common.ExportExcelUtils;
+import com.hywa.pricepublish.common.exception.SexInputException;
 import com.hywa.pricepublish.dao.entity.User;
-import com.hywa.pricepublish.dao.entity.UserExample;
-import com.hywa.pricepublish.dao.mapper.PermissionMapper;
+import com.hywa.pricepublish.dao.entity.UserArea;
 import com.hywa.pricepublish.dao.mapper.RoleMapper;
+import com.hywa.pricepublish.dao.mapper.UserAreaMapper;
 import com.hywa.pricepublish.dao.mapper.UserMapper;
+import com.hywa.pricepublish.representation.UserRep;
 import com.hywa.pricepublish.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import javax.servlet.ServletOutputStream;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,37 +25,35 @@ public class UserServiceImpl implements UserService {
     RoleMapper roleMapper;
 
     @Autowired
-    PermissionMapper permissionMapper;
+    UserAreaMapper userAreaMapper;
 
     @Override
-    public void save(String userName, String psw) {
-        User user = new User();
-        user.setId(UUIDUtils.randomUUID());
-        user.setUsername(userName);
-        user.setPassword(psw);
+    public void save(UserRep userRep) throws SexInputException {
+        User user = new User(userRep);
         userMapper.insert(user);
     }
 
     @Override
-    public Map<String, List<String>> findRolesAndPermissionsByUserName(String username) {
-        User user = userMapper.selectByUserName(username);
-        Map<String, List<String>> rolesAndPermissions = new HashMap<>();
-        List<Role> roles = roleMapper.selectByUserId(user.getId());
-        List<String> strRoles = new ArrayList<>();
-        List<String> strPermissions = new ArrayList<>();
+    public List<User> findUsers(String region, String workUnit) {
+        //TODO mapper.xml 中也为实现
+        return null;
+    }
 
-        roles.forEach(role -> {
-            strRoles.add(role.getName());
-            strPermissions.addAll(permissionMapper.selectByRoleId(role.getId()));
-        });
-
-        rolesAndPermissions.put("roles", strRoles);
-        rolesAndPermissions.put("permissions", strPermissions);
-        return rolesAndPermissions;
+    @Override
+    public void createUserExcel(ServletOutputStream outputStream) {
+        User junfang = userMapper.selectByUserName("junfang");
+        ExportExcelUtils.createExcel(junfang, outputStream);
     }
 
     @Override
     public User findByName(String userName) {
-        return userMapper.selectByUserName(userName);
+        User user = userMapper.selectByUserName(userName);
+        if (user != null) {
+            UserArea userArea = userAreaMapper.findUserArea(user.getId());
+            UserRep userRep = new UserRep(user.getId(), user.getName(), user.getTelephone(),
+                    user.getSex(), user.getJob(), user.getWorkUnit(), user.getAge());
+        }
+        //TODO
+        return user;
     }
 }

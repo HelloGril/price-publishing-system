@@ -12,10 +12,10 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
-        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <!--&lt;!&ndash;数据库连接的信息：驱动类、连接地址、用户名、密码 &ndash;&gt;-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/zcy?characterEncoding=UTF-8" userId="root"
-                        password="123456"/>
+                        connectionURL="jdbc:mysql://192.168.1.75:3306/price_publish?characterEncoding=UTF-8" userId="root"
+                        password="root"/>
 
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal -->
         <javaTypeResolver>
@@ -47,16 +47,24 @@
        enableCountByExample="false" enableUpdateByExample="false"
        enableDeleteByExample="false" enableSelectByExample="false"
       selectByExampleQueryId="false"/>-->
-
-        <table tableName="CTAS_FEE_BASE" domainObjectName="FeeBase"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <!--<columnRenamingRule searchString="^D_"
-                        replaceString=""/>-->
-        </table>
-        <!--<table tableName="sys_user" domainObjectName="User"></table>-->
-        <!--<table tableName="sys_role" domainObjectName="Role"></table>-->
-        <!--<table tableName="sys_permission" domainObjectName="Permission"></table>-->
+        <!--<table tableName="user_info" domainObjectName="User"></table>-->
+        <!--<table tableName="user_ref_area" domainObjectName="UserArea"></table>-->
+        <!--<table tableName="user_ref_role" domainObjectName="UserRole"></table>-->
+        <!--<table tableName="village" domainObjectName="Village"></table>-->
+        <!--<table tableName="town" domainObjectName="Town"></table>-->
+        <!--<table tableName="role_ref_menu" domainObjectName="RoleMenu"></table>-->
+        <!--<table tableName="role_info" domainObjectName="Role"></table>-->
+        <!--<table tableName="reptile_collection" domainObjectName="ReptileCollection"></table>-->
+        <!--<table tableName="province" domainObjectName="Province"></table>-->
+        <!--<table tableName="product_type_level" domainObjectName="ProductTypeLevel"></table>-->
+        <!--<table tableName="product_info" domainObjectName="Product"></table>-->
+        <!--<table tableName="price_collection" domainObjectName="Price_collection"></table>-->
+        <!--<table tableName="params" domainObjectName="Params"></table>-->
+        <!--<table tableName="menu_info" domainObjectName="Menu"></table>-->
+        <!--<table tableName="market" domainObjectName="Market"></table>-->
+        <!--<table tableName="interface_collection" domainObjectName="InterfaceCollection"></table>-->
+        <!--<table tableName="country" domainObjectName="Country"></table>-->
+        <!--<table tableName="collection_template" domainObjectName="CollectionTemplate"></table>-->
+        <!--<table tableName="city" domainObjectName="City"></table>-->
     </context>
 </generatorConfiguration>

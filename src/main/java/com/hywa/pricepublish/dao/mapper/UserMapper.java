@@ -2,12 +2,9 @@ package com.hywa.pricepublish.dao.mapper;
 
 import com.hywa.pricepublish.dao.entity.User;
 import com.hywa.pricepublish.dao.entity.UserExample;
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
-@Mapper
 public interface UserMapper {
     int countByExample(UserExample example);
 

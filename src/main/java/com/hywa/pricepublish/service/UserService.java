@@ -1,15 +1,19 @@
 package com.hywa.pricepublish.service;
 
+import com.hywa.pricepublish.common.exception.SexInputException;
 import com.hywa.pricepublish.dao.entity.User;
+import com.hywa.pricepublish.representation.UserRep;
 
+import javax.servlet.ServletOutputStream;
 import java.util.List;
-import java.util.Map;
 
 
 public interface UserService {
     User findByName(String username);
 
-    void save(String userName, String psw);
+    void save(UserRep userRep) throws SexInputException;
 
-    Map<String,List<String>> findRolesAndPermissionsByUserName(String username);
+    List<User> findUsers(String region, String workUnit);
+
+    void createUserExcel(ServletOutputStream outputStream);
 }
