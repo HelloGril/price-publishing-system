@@ -75,8 +75,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, code, description, type, create_time, update_time, create_user, update_user, 
-    is_del, enable, product_type_id, specification
+    id, name,specification
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hywa.pricepublish.dao.entity.ProductExample" >
     select

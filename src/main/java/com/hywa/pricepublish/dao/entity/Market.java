@@ -19,17 +19,11 @@ public class Market {
 
     private String updateUser;
 
+    private String regionId;
+
     private Short isDel;
 
-    private String provinceId;
-
-    private String cityId;
-
-    private String countyId;
-
-    private String townId;
-
-    private String villageId;
+    private Short regionType;
 
     public String getId() {
         return id;
@@ -95,6 +89,14 @@ public class Market {
         this.updateUser = updateUser == null ? null : updateUser.trim();
     }
 
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId == null ? null : regionId.trim();
+    }
+
     public Short getIsDel() {
         return isDel;
     }
@@ -103,43 +105,11 @@ public class Market {
         this.isDel = isDel;
     }
 
-    public String getProvinceId() {
-        return provinceId;
+    public Short getRegionType() {
+        return regionType;
     }
 
-    public void setProvinceId(String provinceId) {
-        this.provinceId = provinceId == null ? null : provinceId.trim();
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId == null ? null : cityId.trim();
-    }
-
-    public String getCountyId() {
-        return countyId;
-    }
-
-    public void setCountyId(String countyId) {
-        this.countyId = countyId == null ? null : countyId.trim();
-    }
-
-    public String getTownId() {
-        return townId;
-    }
-
-    public void setTownId(String townId) {
-        this.townId = townId == null ? null : townId.trim();
-    }
-
-    public String getVillageId() {
-        return villageId;
-    }
-
-    public void setVillageId(String villageId) {
-        this.villageId = villageId == null ? null : villageId.trim();
+    public void setRegionType(Short regionType) {
+        this.regionType = regionType;
     }
 }

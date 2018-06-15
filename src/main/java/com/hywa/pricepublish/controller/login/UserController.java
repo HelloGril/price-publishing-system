@@ -30,11 +30,10 @@ public class UserController {
             UserRep userRep = new UserRep(user.getId(), user.getName(), user.getTelephone(),
                     user.getSex(), user.getJob(), user.getWorkUnit(), user.getAge());
             userRepResponseBase.setRetBody(userRep);
-            userRepResponseBase.setRetHead(ConstantPool.SUCCESS, "登陆成功");
+            userRepResponseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
         } else {
             userRepResponseBase.setRetHead(ConstantPool.FAILURE, "用户名密码错误，请重新登录");
         }
-
         return new ResponseEntity<>(userRepResponseBase, HttpStatus.OK);
     }
 
@@ -42,7 +41,7 @@ public class UserController {
     public ResponseEntity<ResponseBase> registerUser(@Valid @RequestBody UserRep userRep) throws SexInputException {
         userService.save(userRep);
         ResponseBase<UserRep> userRepResponseBase = new ResponseBase<>();
-        userRepResponseBase.setRetHead(ConstantPool.SUCCESS, "注册成功");
+        userRepResponseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
         return new ResponseEntity<>(userRepResponseBase, HttpStatus.OK);
     }
 }

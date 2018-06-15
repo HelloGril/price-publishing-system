@@ -1,9 +1,11 @@
 package com.hywa.pricepublish.service;
 
-import com.hywa.pricepublish.dao.entity.Market;
+import com.hywa.pricepublish.representation.MarketRep;
 
 import java.util.List;
 
 public interface MarketService {
-    List<Market> findMarkets(String marketTypeId, String region);
+    List<MarketRep> findMarkets(String marketTypeCode, String region);
+
+    void save(MarketRep marketRep, String userId);
 }

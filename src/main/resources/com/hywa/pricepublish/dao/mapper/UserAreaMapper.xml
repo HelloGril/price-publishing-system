@@ -3,7 +3,7 @@
 <mapper namespace="com.hywa.pricepublish.dao.mapper.UserAreaMapper" >
   <resultMap id="BaseResultMap" type="com.hywa.pricepublish.dao.entity.UserArea" >
     <id column="user_id" property="userId" jdbcType="CHAR" />
-    <id column="role_id" property="roleId" jdbcType="CHAR" />
+    <id column="region_id" property="regionId" jdbcType="CHAR" />
     <result column="type" property="type" jdbcType="SMALLINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, role_id, type
+    user_id, region_id, type
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hywa.pricepublish.dao.entity.UserAreaExample" >
     select
@@ -86,12 +86,12 @@
     <include refid="Base_Column_List" />
     from user_ref_area
     where user_id = #{userId,jdbcType=CHAR}
-      and role_id = #{roleId,jdbcType=CHAR}
+      and region_id = #{regionId,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.UserAreaKey" >
     delete from user_ref_area
     where user_id = #{userId,jdbcType=CHAR}
-      and role_id = #{roleId,jdbcType=CHAR}
+      and region_id = #{regionId,jdbcType=CHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.UserAreaExample" >
     delete from user_ref_area
@@ -100,9 +100,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.UserArea" >
-    insert into user_ref_area (user_id, role_id, type
+    insert into user_ref_area (user_id, region_id, type
       )
-    values (#{userId,jdbcType=CHAR}, #{roleId,jdbcType=CHAR}, #{type,jdbcType=SMALLINT}
+    values (#{userId,jdbcType=CHAR}, #{regionId,jdbcType=CHAR}, #{type,jdbcType=SMALLINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hywa.pricepublish.dao.entity.UserArea" >
@@ -111,8 +111,8 @@
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="roleId != null" >
-        role_id,
+      <if test="regionId != null" >
+        region_id,
       </if>
       <if test="type != null" >
         type,
@@ -122,8 +122,8 @@
       <if test="userId != null" >
         #{userId,jdbcType=CHAR},
       </if>
-      <if test="roleId != null" >
-        #{roleId,jdbcType=CHAR},
+      <if test="regionId != null" >
+        #{regionId,jdbcType=CHAR},
       </if>
       <if test="type != null" >
         #{type,jdbcType=SMALLINT},
@@ -142,8 +142,8 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=CHAR},
       </if>
-      <if test="record.roleId != null" >
-        role_id = #{record.roleId,jdbcType=CHAR},
+      <if test="record.regionId != null" >
+        region_id = #{record.regionId,jdbcType=CHAR},
       </if>
       <if test="record.type != null" >
         type = #{record.type,jdbcType=SMALLINT},
@@ -156,7 +156,7 @@
   <update id="updateByExample" parameterType="map" >
     update user_ref_area
     set user_id = #{record.userId,jdbcType=CHAR},
-      role_id = #{record.roleId,jdbcType=CHAR},
+      region_id = #{record.regionId,jdbcType=CHAR},
       type = #{record.type,jdbcType=SMALLINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -170,12 +170,12 @@
       </if>
     </set>
     where user_id = #{userId,jdbcType=CHAR}
-      and role_id = #{roleId,jdbcType=CHAR}
+      and region_id = #{regionId,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.UserArea" >
     update user_ref_area
     set type = #{type,jdbcType=SMALLINT}
     where user_id = #{userId,jdbcType=CHAR}
-      and role_id = #{roleId,jdbcType=CHAR}
+      and region_id = #{regionId,jdbcType=CHAR}
   </update>
 </mapper>

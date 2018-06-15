@@ -1,339 +1,308 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hywa.pricepublish.dao.mapper.MarketMapper" >
-  <resultMap id="BaseResultMap" type="com.hywa.pricepublish.dao.entity.Market" >
-    <id column="id" property="id" jdbcType="CHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="code" property="code" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="SMALLINT" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="create_user" property="createUser" jdbcType="CHAR" />
-    <result column="update_user" property="updateUser" jdbcType="CHAR" />
-    <result column="is_del" property="isDel" jdbcType="SMALLINT" />
-    <result column="province_id" property="provinceId" jdbcType="CHAR" />
-    <result column="city_id" property="cityId" jdbcType="CHAR" />
-    <result column="county_id" property="countyId" jdbcType="CHAR" />
-    <result column="town_id" property="townId" jdbcType="CHAR" />
-    <result column="village_id" property="villageId" jdbcType="CHAR" />
-  </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+<mapper namespace="com.hywa.pricepublish.dao.mapper.MarketMapper">
+    <resultMap id="BaseResultMap" type="com.hywa.pricepublish.dao.entity.Market">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="SMALLINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="create_user" property="createUser" jdbcType="CHAR"/>
+        <result column="update_user" property="updateUser" jdbcType="CHAR"/>
+        <result column="region_id" property="regionId" jdbcType="CHAR"/>
+        <result column="is_del" property="isDel" jdbcType="SMALLINT"/>
+        <result column="region_type" property="regionType" jdbcType="SMALLINT"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    id, name, code, type, create_time, update_time, create_user, update_user, region_id, 
+    is_del, region_type
+  </sql>
+    <select id="selectByExample" resultMap="BaseResultMap"
+            parameterType="com.hywa.pricepublish.dao.entity.MarketExample">
+        select
+        <if test="distinct">
+            distinct
         </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
-    id, name, code, type, create_time, update_time, create_user, update_user, is_del, 
-    province_id, city_id, county_id, town_id, village_id
-  </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hywa.pricepublish.dao.entity.MarketExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from market
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from market
-    where id = #{id,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        <include refid="Base_Column_List"/>
+        from market
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from market
+        where id = #{id,jdbcType=CHAR}
+    </select>
+
+    <!--通过市场类型和区域查询市场-->
+    <select id="selectMarketsByTypeAndRegion" resultType="com.hywa.pricepublish.dao.entity.Market">
+    select * from market
+    where region_id = #{regionId}
+    and type = #{marketTypeCode}
+    and is_del = 0
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from market
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.MarketExample" >
-    delete from market
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.Market" >
+    <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.MarketExample">
+        delete from market
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.Market">
     insert into market (id, name, code, 
       type, create_time, update_time, 
-      create_user, update_user, is_del, 
-      province_id, city_id, county_id, 
-      town_id, village_id)
+      create_user, update_user, region_id, 
+      is_del, region_type)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
       #{type,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createUser,jdbcType=CHAR}, #{updateUser,jdbcType=CHAR}, #{isDel,jdbcType=SMALLINT}, 
-      #{provinceId,jdbcType=CHAR}, #{cityId,jdbcType=CHAR}, #{countyId,jdbcType=CHAR}, 
-      #{townId,jdbcType=CHAR}, #{villageId,jdbcType=CHAR})
+      #{createUser,jdbcType=CHAR}, #{updateUser,jdbcType=CHAR}, #{regionId,jdbcType=CHAR}, 
+      #{isDel,jdbcType=SMALLINT}, #{regionType,jdbcType=SMALLINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.hywa.pricepublish.dao.entity.Market" >
-    insert into market
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="code != null" >
-        code,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="updateTime != null" >
-        update_time,
-      </if>
-      <if test="createUser != null" >
-        create_user,
-      </if>
-      <if test="updateUser != null" >
-        update_user,
-      </if>
-      <if test="isDel != null" >
-        is_del,
-      </if>
-      <if test="provinceId != null" >
-        province_id,
-      </if>
-      <if test="cityId != null" >
-        city_id,
-      </if>
-      <if test="countyId != null" >
-        county_id,
-      </if>
-      <if test="townId != null" >
-        town_id,
-      </if>
-      <if test="villageId != null" >
-        village_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=CHAR},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null" >
-        #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=SMALLINT},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createUser != null" >
-        #{createUser,jdbcType=CHAR},
-      </if>
-      <if test="updateUser != null" >
-        #{updateUser,jdbcType=CHAR},
-      </if>
-      <if test="isDel != null" >
-        #{isDel,jdbcType=SMALLINT},
-      </if>
-      <if test="provinceId != null" >
-        #{provinceId,jdbcType=CHAR},
-      </if>
-      <if test="cityId != null" >
-        #{cityId,jdbcType=CHAR},
-      </if>
-      <if test="countyId != null" >
-        #{countyId,jdbcType=CHAR},
-      </if>
-      <if test="townId != null" >
-        #{townId,jdbcType=CHAR},
-      </if>
-      <if test="villageId != null" >
-        #{villageId,jdbcType=CHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.hywa.pricepublish.dao.entity.MarketExample" resultType="java.lang.Integer" >
-    select count(*) from market
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update market
-    <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=CHAR},
-      </if>
-      <if test="record.name != null" >
+    <insert id="insertSelective" parameterType="com.hywa.pricepublish.dao.entity.Market">
+        insert into market
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="createUser != null">
+                create_user,
+            </if>
+            <if test="updateUser != null">
+                update_user,
+            </if>
+            <if test="regionId != null">
+                region_id,
+            </if>
+            <if test="isDel != null">
+                is_del,
+            </if>
+            <if test="regionType != null">
+                regionType,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=CHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=SMALLINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUser != null">
+                #{createUser,jdbcType=CHAR},
+            </if>
+            <if test="updateUser != null">
+                #{updateUser,jdbcType=CHAR},
+            </if>
+            <if test="regionId != null">
+                #{regionId,jdbcType=CHAR},
+            </if>
+            <if test="isDel != null">
+                #{isDel,jdbcType=SMALLINT},
+            </if>
+            <if test="regionType != null">
+                #{regionType,jdbcType=SMALLINT},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.hywa.pricepublish.dao.entity.MarketExample"
+            resultType="java.lang.Integer">
+        select count(*) from market
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update market
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=CHAR},
+            </if>
+            <if test="record.name != null">
+                name = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.code != null">
+                code = #{record.code,jdbcType=VARCHAR},
+            </if>
+            <if test="record.type != null">
+                type = #{record.type,jdbcType=SMALLINT},
+            </if>
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.updateTime != null">
+                update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.createUser != null">
+                create_user = #{record.createUser,jdbcType=CHAR},
+            </if>
+            <if test="record.updateUser != null">
+                update_user = #{record.updateUser,jdbcType=CHAR},
+            </if>
+            <if test="record.regionId != null">
+                region_id = #{record.regionId,jdbcType=CHAR},
+            </if>
+            <if test="record.isDel != null">
+                is_del = #{record.isDel,jdbcType=SMALLINT},
+            </if>
+            <if test="record.regionType != null">
+                region_type = #{record.regionType,jdbcType=SMALLINT},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update market
+        set id = #{record.id,jdbcType=CHAR},
         name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.code != null" >
         code = #{record.code,jdbcType=VARCHAR},
-      </if>
-      <if test="record.type != null" >
         type = #{record.type,jdbcType=SMALLINT},
-      </if>
-      <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updateTime != null" >
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.createUser != null" >
         create_user = #{record.createUser,jdbcType=CHAR},
-      </if>
-      <if test="record.updateUser != null" >
         update_user = #{record.updateUser,jdbcType=CHAR},
-      </if>
-      <if test="record.isDel != null" >
+        region_id = #{record.regionId,jdbcType=CHAR},
         is_del = #{record.isDel,jdbcType=SMALLINT},
-      </if>
-      <if test="record.provinceId != null" >
-        province_id = #{record.provinceId,jdbcType=CHAR},
-      </if>
-      <if test="record.cityId != null" >
-        city_id = #{record.cityId,jdbcType=CHAR},
-      </if>
-      <if test="record.countyId != null" >
-        county_id = #{record.countyId,jdbcType=CHAR},
-      </if>
-      <if test="record.townId != null" >
-        town_id = #{record.townId,jdbcType=CHAR},
-      </if>
-      <if test="record.villageId != null" >
-        village_id = #{record.villageId,jdbcType=CHAR},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update market
-    set id = #{record.id,jdbcType=CHAR},
-      name = #{record.name,jdbcType=VARCHAR},
-      code = #{record.code,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=SMALLINT},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      create_user = #{record.createUser,jdbcType=CHAR},
-      update_user = #{record.updateUser,jdbcType=CHAR},
-      is_del = #{record.isDel,jdbcType=SMALLINT},
-      province_id = #{record.provinceId,jdbcType=CHAR},
-      city_id = #{record.cityId,jdbcType=CHAR},
-      county_id = #{record.countyId,jdbcType=CHAR},
-      town_id = #{record.townId,jdbcType=CHAR},
-      village_id = #{record.villageId,jdbcType=CHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hywa.pricepublish.dao.entity.Market" >
-    update market
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null" >
-        code = #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=SMALLINT},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createUser != null" >
-        create_user = #{createUser,jdbcType=CHAR},
-      </if>
-      <if test="updateUser != null" >
-        update_user = #{updateUser,jdbcType=CHAR},
-      </if>
-      <if test="isDel != null" >
-        is_del = #{isDel,jdbcType=SMALLINT},
-      </if>
-      <if test="provinceId != null" >
-        province_id = #{provinceId,jdbcType=CHAR},
-      </if>
-      <if test="cityId != null" >
-        city_id = #{cityId,jdbcType=CHAR},
-      </if>
-      <if test="countyId != null" >
-        county_id = #{countyId,jdbcType=CHAR},
-      </if>
-      <if test="townId != null" >
-        town_id = #{townId,jdbcType=CHAR},
-      </if>
-      <if test="villageId != null" >
-        village_id = #{villageId,jdbcType=CHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=CHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.Market" >
+        region_type = #{record.regionType,jdbcType=SMALLINT}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.hywa.pricepublish.dao.entity.Market">
+        update market
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                code = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=SMALLINT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUser != null">
+                create_user = #{createUser,jdbcType=CHAR},
+            </if>
+            <if test="updateUser != null">
+                update_user = #{updateUser,jdbcType=CHAR},
+            </if>
+            <if test="regionId != null">
+                region_id = #{regionId,jdbcType=CHAR},
+            </if>
+            <if test="isDel != null">
+                is_del = #{isDel,jdbcType=SMALLINT},
+            </if>
+            <if test="regionType != null">
+                region_type = #{regionType,jdbcType=SMALLINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.Market">
     update market
     set name = #{name,jdbcType=VARCHAR},
       code = #{code,jdbcType=VARCHAR},
@@ -342,12 +311,9 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       create_user = #{createUser,jdbcType=CHAR},
       update_user = #{updateUser,jdbcType=CHAR},
+      region_id = #{regionId,jdbcType=CHAR},
       is_del = #{isDel,jdbcType=SMALLINT},
-      province_id = #{provinceId,jdbcType=CHAR},
-      city_id = #{cityId,jdbcType=CHAR},
-      county_id = #{countyId,jdbcType=CHAR},
-      town_id = #{townId,jdbcType=CHAR},
-      village_id = #{villageId,jdbcType=CHAR}
+      region_type = #{regionType,jdbcType=SMALLINT}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>

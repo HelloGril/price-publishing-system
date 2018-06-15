@@ -7,20 +7,29 @@ import java.util.Date;
 
 /**
  * 日期工具类
+ *
  * @author gd_xbb
  */
 public class DateUtils {
-    /**默认格式（2016-08-20）*/
+    /**
+     * 默认格式（2016-08-20）
+     */
     public static final String DEFAULT_FORMAT = "yyyy-MM-dd";
-    /**详细日期格式（2016-08-20 17:30:30）*/
+    /**
+     * 详细日期格式（2016-08-20 17:30:30）
+     */
     public static final String DETAIL = "yyyy-MM-dd HH:mm:ss";
-    /**带/的日期格式（2016/08/20）*/
+    /**
+     * 带/的日期格式（2016/08/20）
+     */
     public static final String FORMAT_SLASH = "yyyy/MM/dd";
-    /**中文的日期格式（2016年08月20日）*/
+    /**
+     * 中文的日期格式（2016年08月20日）
+     */
     public static final String CHINESE_FORMAT = "yyyy年MM月dd日";
     public static final String CHINESE_FORMAT_DETAIL = "yyyy年MM月dd日 HH:mm:ss";
     /*一天 时间毫秒数*/
-    public static final long ONE_DAY_MILLIS = 1000*3600*24;
+    public static final long ONE_DAY_MILLIS = 1000 * 3600 * 24;
 
     /**
      * 将Date类型转换为字符串类型
@@ -29,11 +38,11 @@ public class DateUtils {
      * @param format
      * @return
      */
-    public static String formatDate(Date date, String format){
-        if (null == date){
+    public static String formatDate(Date date, String format) {
+        if (null == date) {
             return null;
         }
-        if (StringUtils.isEmpty(format)){
+        if (StringUtils.isEmpty(format)) {
             format = DEFAULT_FORMAT;
         }
         SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -48,11 +57,11 @@ public class DateUtils {
      * @return
      * @throws ParseException
      */
-    public static Date stringToDate(String dateStr, String format) throws ParseException{
-        if (StringUtils.isEmpty(dateStr)){
+    public static Date stringToDate(String dateStr, String format) throws ParseException {
+        if (StringUtils.isEmpty(dateStr)) {
             return null;
         }
-        if (StringUtils.isEmpty(format)){
+        if (StringUtils.isEmpty(format)) {
             format = DEFAULT_FORMAT;
         }
         SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -64,7 +73,7 @@ public class DateUtils {
      *
      * @return
      */
-    public static Date currentMonthStart(){
+    public static Date currentMonthStart() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -75,9 +84,10 @@ public class DateUtils {
 
     /**
      * 得到本月最后一刻时间
+     *
      * @return
      */
-    public static Date currentMonthEnd(){
+    public static Date currentMonthEnd() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
         calendar.set(Calendar.HOUR_OF_DAY, 23);
@@ -88,15 +98,17 @@ public class DateUtils {
 
     /**
      * 得到本年年份
+     *
      * @return
      */
-    public static int currentYear(){
+    public static int currentYear() {
         Calendar calendar = Calendar.getInstance();
         return calendar.get(Calendar.YEAR);
     }
 
     /**
      * 通过生日得到年龄
+     *
      * @param birthDate
      * @return
      */
@@ -124,21 +136,24 @@ public class DateUtils {
 
     /**
      * 通过日期生成惟一主键
+     *
      * @return
      */
-    public static synchronized String generateId(){
-        return System.currentTimeMillis()+"";
+    public static synchronized String generateId() {
+        return System.currentTimeMillis() + "";
     }
 
 
-    public static synchronized String generateDateId(){
+    public static synchronized String generateDateId() {
         Date date = new Date();
         String dateStr = formatDate(date, "yyyyMMddHHmmss");
         return dateStr;
     }
 
-    public static void main(String args[]){
-        System.out.println(generateDateId());
+    public static void main(String args[]) {
+        for (int i = 0; i < 20; i++) {
+            System.out.println(UUIDUtils.randomUUID());
+        }
     }
 
 }

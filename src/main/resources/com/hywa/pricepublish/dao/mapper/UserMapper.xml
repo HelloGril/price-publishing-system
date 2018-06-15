@@ -107,7 +107,11 @@
     *
     from user_info user
     where user.name = #{userName,jdbcType=VARCHAR}
-  </select>
+    </select>
+    <select id="selectByRegionAndWorkUnit" resultType="java.util.List">
+        select * from user
+        //TODO
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from user_info
     where id = #{id,jdbcType=VARCHAR}

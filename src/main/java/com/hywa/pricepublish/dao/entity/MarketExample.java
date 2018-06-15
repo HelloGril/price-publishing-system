@@ -635,6 +635,76 @@ public class MarketExample {
             return (Criteria) this;
         }
 
+        public Criteria andRegionIdIsNull() {
+            addCriterion("region_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdIsNotNull() {
+            addCriterion("region_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdEqualTo(String value) {
+            addCriterion("region_id =", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdNotEqualTo(String value) {
+            addCriterion("region_id <>", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdGreaterThan(String value) {
+            addCriterion("region_id >", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdGreaterThanOrEqualTo(String value) {
+            addCriterion("region_id >=", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdLessThan(String value) {
+            addCriterion("region_id <", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdLessThanOrEqualTo(String value) {
+            addCriterion("region_id <=", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdLike(String value) {
+            addCriterion("region_id like", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdNotLike(String value) {
+            addCriterion("region_id not like", value, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdIn(List<String> values) {
+            addCriterion("region_id in", values, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdNotIn(List<String> values) {
+            addCriterion("region_id not in", values, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdBetween(String value1, String value2) {
+            addCriterion("region_id between", value1, value2, "regionId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegionIdNotBetween(String value1, String value2) {
+            addCriterion("region_id not between", value1, value2, "regionId");
+            return (Criteria) this;
+        }
+
         public Criteria andIsDelIsNull() {
             addCriterion("is_del is null");
             return (Criteria) this;
@@ -695,353 +765,63 @@ public class MarketExample {
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdIsNull() {
-            addCriterion("province_id is null");
+        public Criteria andType2IsNull() {
+            addCriterion("type2 is null");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdIsNotNull() {
-            addCriterion("province_id is not null");
+        public Criteria andType2IsNotNull() {
+            addCriterion("type2 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdEqualTo(String value) {
-            addCriterion("province_id =", value, "provinceId");
+        public Criteria andType2EqualTo(Short value) {
+            addCriterion("type2 =", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdNotEqualTo(String value) {
-            addCriterion("province_id <>", value, "provinceId");
+        public Criteria andType2NotEqualTo(Short value) {
+            addCriterion("type2 <>", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdGreaterThan(String value) {
-            addCriterion("province_id >", value, "provinceId");
+        public Criteria andType2GreaterThan(Short value) {
+            addCriterion("type2 >", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdGreaterThanOrEqualTo(String value) {
-            addCriterion("province_id >=", value, "provinceId");
+        public Criteria andType2GreaterThanOrEqualTo(Short value) {
+            addCriterion("type2 >=", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdLessThan(String value) {
-            addCriterion("province_id <", value, "provinceId");
+        public Criteria andType2LessThan(Short value) {
+            addCriterion("type2 <", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdLessThanOrEqualTo(String value) {
-            addCriterion("province_id <=", value, "provinceId");
+        public Criteria andType2LessThanOrEqualTo(Short value) {
+            addCriterion("type2 <=", value, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdLike(String value) {
-            addCriterion("province_id like", value, "provinceId");
+        public Criteria andType2In(List<Short> values) {
+            addCriterion("type2 in", values, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdNotLike(String value) {
-            addCriterion("province_id not like", value, "provinceId");
+        public Criteria andType2NotIn(List<Short> values) {
+            addCriterion("type2 not in", values, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdIn(List<String> values) {
-            addCriterion("province_id in", values, "provinceId");
+        public Criteria andType2Between(Short value1, Short value2) {
+            addCriterion("type2 between", value1, value2, "type2");
             return (Criteria) this;
         }
 
-        public Criteria andProvinceIdNotIn(List<String> values) {
-            addCriterion("province_id not in", values, "provinceId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProvinceIdBetween(String value1, String value2) {
-            addCriterion("province_id between", value1, value2, "provinceId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProvinceIdNotBetween(String value1, String value2) {
-            addCriterion("province_id not between", value1, value2, "provinceId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdIsNull() {
-            addCriterion("city_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdIsNotNull() {
-            addCriterion("city_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdEqualTo(String value) {
-            addCriterion("city_id =", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdNotEqualTo(String value) {
-            addCriterion("city_id <>", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdGreaterThan(String value) {
-            addCriterion("city_id >", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdGreaterThanOrEqualTo(String value) {
-            addCriterion("city_id >=", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdLessThan(String value) {
-            addCriterion("city_id <", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdLessThanOrEqualTo(String value) {
-            addCriterion("city_id <=", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdLike(String value) {
-            addCriterion("city_id like", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdNotLike(String value) {
-            addCriterion("city_id not like", value, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdIn(List<String> values) {
-            addCriterion("city_id in", values, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdNotIn(List<String> values) {
-            addCriterion("city_id not in", values, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdBetween(String value1, String value2) {
-            addCriterion("city_id between", value1, value2, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCityIdNotBetween(String value1, String value2) {
-            addCriterion("city_id not between", value1, value2, "cityId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdIsNull() {
-            addCriterion("county_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdIsNotNull() {
-            addCriterion("county_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdEqualTo(String value) {
-            addCriterion("county_id =", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdNotEqualTo(String value) {
-            addCriterion("county_id <>", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdGreaterThan(String value) {
-            addCriterion("county_id >", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdGreaterThanOrEqualTo(String value) {
-            addCriterion("county_id >=", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdLessThan(String value) {
-            addCriterion("county_id <", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdLessThanOrEqualTo(String value) {
-            addCriterion("county_id <=", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdLike(String value) {
-            addCriterion("county_id like", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdNotLike(String value) {
-            addCriterion("county_id not like", value, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdIn(List<String> values) {
-            addCriterion("county_id in", values, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdNotIn(List<String> values) {
-            addCriterion("county_id not in", values, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdBetween(String value1, String value2) {
-            addCriterion("county_id between", value1, value2, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCountyIdNotBetween(String value1, String value2) {
-            addCriterion("county_id not between", value1, value2, "countyId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdIsNull() {
-            addCriterion("town_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdIsNotNull() {
-            addCriterion("town_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdEqualTo(String value) {
-            addCriterion("town_id =", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdNotEqualTo(String value) {
-            addCriterion("town_id <>", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdGreaterThan(String value) {
-            addCriterion("town_id >", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdGreaterThanOrEqualTo(String value) {
-            addCriterion("town_id >=", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdLessThan(String value) {
-            addCriterion("town_id <", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdLessThanOrEqualTo(String value) {
-            addCriterion("town_id <=", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdLike(String value) {
-            addCriterion("town_id like", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdNotLike(String value) {
-            addCriterion("town_id not like", value, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdIn(List<String> values) {
-            addCriterion("town_id in", values, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdNotIn(List<String> values) {
-            addCriterion("town_id not in", values, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdBetween(String value1, String value2) {
-            addCriterion("town_id between", value1, value2, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTownIdNotBetween(String value1, String value2) {
-            addCriterion("town_id not between", value1, value2, "townId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdIsNull() {
-            addCriterion("village_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdIsNotNull() {
-            addCriterion("village_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdEqualTo(String value) {
-            addCriterion("village_id =", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdNotEqualTo(String value) {
-            addCriterion("village_id <>", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdGreaterThan(String value) {
-            addCriterion("village_id >", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdGreaterThanOrEqualTo(String value) {
-            addCriterion("village_id >=", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdLessThan(String value) {
-            addCriterion("village_id <", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdLessThanOrEqualTo(String value) {
-            addCriterion("village_id <=", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdLike(String value) {
-            addCriterion("village_id like", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdNotLike(String value) {
-            addCriterion("village_id not like", value, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdIn(List<String> values) {
-            addCriterion("village_id in", values, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdNotIn(List<String> values) {
-            addCriterion("village_id not in", values, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdBetween(String value1, String value2) {
-            addCriterion("village_id between", value1, value2, "villageId");
-            return (Criteria) this;
-        }
-
-        public Criteria andVillageIdNotBetween(String value1, String value2) {
-            addCriterion("village_id not between", value1, value2, "villageId");
+        public Criteria andType2NotBetween(Short value1, Short value2) {
+            addCriterion("type2 not between", value1, value2, "type2");
             return (Criteria) this;
         }
     }

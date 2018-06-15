@@ -3,7 +3,7 @@ package com.hywa.pricepublish.dao.entity;
 public class UserAreaKey {
     private String userId;
 
-    private String roleId;
+    private String regionId;
 
     public String getUserId() {
         return userId;
@@ -13,11 +13,11 @@ public class UserAreaKey {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getRoleId() {
-        return roleId;
+    public String getregionId() {
+        return regionId;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId == null ? null : roleId.trim();
+    public void setregionId(String regionId) {
+        this.regionId = regionId == null ? null : regionId.trim();
     }
 }

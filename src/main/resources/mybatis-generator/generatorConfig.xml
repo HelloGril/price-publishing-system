@@ -58,13 +58,14 @@
         <!--<table tableName="province" domainObjectName="Province"></table>-->
         <!--<table tableName="product_type_level" domainObjectName="ProductTypeLevel"></table>-->
         <!--<table tableName="product_info" domainObjectName="Product"></table>-->
-        <!--<table tableName="price_collection" domainObjectName="Price_collection"></table>-->
+        <!--<table tableName="price_collection" domainObjectName="PriceCollection"></table>-->
         <!--<table tableName="params" domainObjectName="Params"></table>-->
         <!--<table tableName="menu_info" domainObjectName="Menu"></table>-->
         <!--<table tableName="market" domainObjectName="Market"></table>-->
         <!--<table tableName="interface_collection" domainObjectName="InterfaceCollection"></table>-->
         <!--<table tableName="country" domainObjectName="Country"></table>-->
         <!--<table tableName="collection_template" domainObjectName="CollectionTemplate"></table>-->
-        <!--<table tableName="city" domainObjectName="City"></table>-->
+        <!--<table tableName="dict" domainObjectName="Dict"></table>-->
+        <!--<table tableName="collection_history" domainObjectName="CollectionHistory"></table>-->
     </context>
 </generatorConfiguration>

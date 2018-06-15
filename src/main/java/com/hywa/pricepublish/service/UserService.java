@@ -15,5 +15,5 @@ public interface UserService {
 
     List<User> findUsers(String region, String workUnit);
 
-    void createUserExcel(ServletOutputStream outputStream);
+//    void createUserExcel(ServletOutputStream outputStream);
 }

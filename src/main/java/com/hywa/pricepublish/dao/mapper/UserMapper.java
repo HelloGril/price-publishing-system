@@ -29,4 +29,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByUserName(String userName);
+
+    List<User> selectByRegionAndWorkUnit(String region, String workUnit);
 }

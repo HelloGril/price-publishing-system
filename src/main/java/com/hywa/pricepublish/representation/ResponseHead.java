@@ -38,7 +38,5 @@ public class ResponseHead implements Serializable {
                 ", errMsg='" + errMsg + '\'' +
                 '}';
     }
-
-
 }
 
