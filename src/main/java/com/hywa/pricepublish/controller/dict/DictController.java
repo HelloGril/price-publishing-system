@@ -2,6 +2,7 @@ package com.hywa.pricepublish.controller.dict;
 
 import com.hywa.pricepublish.common.ConstantPool;
 import com.hywa.pricepublish.representation.DictRep;
+import com.hywa.pricepublish.representation.DictReps;
 import com.hywa.pricepublish.representation.ResponseBase;
 import com.hywa.pricepublish.service.DictService;
 import com.hywa.pricepublish.service.DictTypeService;
@@ -28,9 +29,9 @@ public class DictController {
     @GetMapping("/find")
     public ResponseEntity<ResponseBase> findMarketType(@RequestParam String typeCode) {
         String dictTypeId = dictTypeService.findDictTypeIdByCode(typeCode);
-        List<DictRep> dictList = dictService.findDictListByDictType(dictTypeId);
+        DictReps dictList = dictService.findDictListByDictType(dictTypeId);
 
-        ResponseBase<List<DictRep>> repResponseBase = new ResponseBase<>();
+        ResponseBase<DictReps> repResponseBase = new ResponseBase<>();
         repResponseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
         repResponseBase.setRetBody(dictList);
         return new ResponseEntity<>(repResponseBase, HttpStatus.OK);

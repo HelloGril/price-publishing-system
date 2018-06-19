@@ -46,6 +46,7 @@ public class MarketController {
     @PostMapping("/add")
     public ResponseEntity<ResponseBase> addMarket(@RequestBody MarketRep marketRep,
                                                   @RequestParam String userId) {
+        //TODO 市场中增加地址信息
         try {
             marketService.save(marketRep, userId);
             ResponseBase<PageInfo<MarketRep>> repResponseBase = new ResponseBase<>();

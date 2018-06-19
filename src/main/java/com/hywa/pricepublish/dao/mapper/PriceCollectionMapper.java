@@ -1,14 +1,14 @@
 package com.hywa.pricepublish.dao.mapper;
 
 import com.hywa.pricepublish.dao.entity.PriceCollection;
-import com.hywa.pricepublish.dao.entity.Price_collectionExample;
+import com.hywa.pricepublish.dao.entity.PriceCollectionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface PriceCollectionMapper {
-    int countByExample(Price_collectionExample example);
+    int countByExample(PriceCollectionExample example);
 
-    int deleteByExample(Price_collectionExample example);
+    int deleteByExample(PriceCollectionExample example);
 
     int deleteByPrimaryKey(String id);
 
@@ -16,13 +16,13 @@ public interface PriceCollectionMapper {
 
     int insertSelective(PriceCollection record);
 
-    List<PriceCollection> selectByExample(Price_collectionExample example);
+    List<PriceCollection> selectByExample(PriceCollectionExample example);
 
     PriceCollection selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") PriceCollection record, @Param("example") Price_collectionExample example);
+    int updateByExampleSelective(@Param("record") PriceCollection record, @Param("example") PriceCollectionExample example);
 
-    int updateByExample(@Param("record") PriceCollection record, @Param("example") Price_collectionExample example);
+    int updateByExample(@Param("record") PriceCollection record, @Param("example") PriceCollectionExample example);
 
     int updateByPrimaryKeySelective(PriceCollection record);
 

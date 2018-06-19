@@ -26,6 +26,8 @@ public class PriceCollection {
 
     private String productId;
 
+    private String historyId;
+
     public String getId() {
         return id;
     }
@@ -112,5 +114,13 @@ public class PriceCollection {
 
     public void setProductId(String productId) {
         this.productId = productId == null ? null : productId.trim();
+    }
+
+    public String getHistoryId() {
+        return historyId;
+    }
+
+    public void setHistoryId(String historyId) {
+        this.historyId = historyId;
     }
 }

@@ -1,68 +1,77 @@
 package com.hywa.pricepublish.service.impl;
 
-import com.hywa.pricepublish.common.ConstantPool;
+import com.hywa.pricepublish.common.DateUtils;
 import com.hywa.pricepublish.common.UUIDUtils;
-import com.hywa.pricepublish.dao.entity.CollectionHistory;
-import com.hywa.pricepublish.dao.entity.CollectionHistoryExample;
 import com.hywa.pricepublish.dao.entity.PriceCollection;
+import com.hywa.pricepublish.dao.entity.PriceCollectionExample;
 import com.hywa.pricepublish.dao.mapper.CollectionHistoryMapper;
 import com.hywa.pricepublish.dao.mapper.PriceCollectionMapper;
-import com.hywa.pricepublish.representation.CollectionHistoryRep;
+import com.hywa.pricepublish.event.PriceCollectedEvent;
+import com.hywa.pricepublish.representation.PriceCollectionRep;
 import com.hywa.pricepublish.representation.ProductRep;
 import com.hywa.pricepublish.service.PriceCollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PriceCollectionServiceImpl implements PriceCollectionService {
+
     @Autowired
     private PriceCollectionMapper priceCollectionMapper;
 
     @Autowired
     private CollectionHistoryMapper collectionHistoryMapper;
 
-    @Transactional
+    @Autowired
+    private ApplicationContext context;
+
     @Override
-    public void save(String userId, Date dateTime, String marketId, String marketName, List<ProductRep> reps) {
+    @Transactional
+    public void save(String userId, String dateTime, String marketId, String marketName, List<ProductRep> reps) {
+        String historyId = UUIDUtils.randomUUID();
         List<PriceCollection> priceCollections = new ArrayList<>();
         reps.forEach(productRep -> {
             PriceCollection priceCollection = new PriceCollection();
-            priceCollection.setCreateTime(dateTime);
             priceCollection.setCreateUser(userId);
             priceCollection.setId(UUIDUtils.randomUUID());
             priceCollection.setMarketId(marketId);
-            priceCollection.setUpdateTime(dateTime);
             priceCollection.setProcudtId(productRep.getProductId());
             priceCollection.setPrice(productRep.getPrice());
+            priceCollection.setHistoryId(historyId);
+            try {
+                priceCollection.setCreateTime(DateUtils.stringToDate(dateTime, DateUtils.DETAIL));
+                priceCollection.setUpdateTime(DateUtils.stringToDate(dateTime, DateUtils.DETAIL));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         });
         priceCollectionMapper.insertBatch(priceCollections);
+        saveCollectHistory(dateTime, marketName, historyId);
+    }
 
-        CollectionHistory collectionHistory = new CollectionHistory();
-        collectionHistory.setCollectionTime(dateTime);
-        collectionHistory.setId(UUIDUtils.randomUUID());
-        collectionHistory.setIsDel(ConstantPool.NOT_DEL);
-        collectionHistory.setMarketName(marketName);
-        collectionHistoryMapper.insert(collectionHistory);
+    private void saveCollectHistory(String dateTime, String marketName, String historyId) {
+        Map<String, String> map = new HashMap<>();
+        map.put("historyId", historyId);
+        map.put("marketName", marketName);
+        map.put("dateTime", dateTime);
+        context.publishEvent(new PriceCollectedEvent(map));
     }
 
     @Override
-    public List<CollectionHistoryRep> collectHistory(String userId) {
-        CollectionHistoryExample example = new CollectionHistoryExample();
+    public PriceCollectionRep findCollect(String priceCollectId) {
+        //TODO userID,dateTime,
+        PriceCollectionExample example = new PriceCollectionExample();
         example.createCriteria()
-                .andUserIdEqualTo(userId)
-                .andIsDelEqualTo(ConstantPool.NOT_DEL);
-        List<CollectionHistory> collectionHistories = collectionHistoryMapper.selectByExample(example);
-
-        List<CollectionHistoryRep> collectionHistoryReps = new ArrayList<>();
-        collectionHistories.forEach(collectionHistory -> {
-            CollectionHistoryRep collectionHistoryRep = new CollectionHistoryRep(collectionHistory);
-            collectionHistoryReps.add(collectionHistoryRep);
-        });
-        return collectionHistoryReps;
+                .andIdEqualTo(priceCollectId);
+        PriceCollection priceCollection = priceCollectionMapper.selectByExample(example).get(0);
+        return new PriceCollectionRep(priceCollection);
     }
 }

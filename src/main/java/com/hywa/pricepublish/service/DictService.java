@@ -1,9 +1,7 @@
 package com.hywa.pricepublish.service;
 
-import com.hywa.pricepublish.representation.DictRep;
-
-import java.util.List;
+import com.hywa.pricepublish.representation.DictReps;
 
 public interface DictService {
-    List<DictRep> findDictListByDictType(String dictTypeId);
+    DictReps findDictListByDictType(String dictTypeId);
 }

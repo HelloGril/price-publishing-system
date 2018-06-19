@@ -1,17 +1,14 @@
 package com.hywa.pricepublish.controller.collect;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.hywa.pricepublish.common.ConstantPool;
 import com.hywa.pricepublish.representation.CollectionTemplateRep;
+import com.hywa.pricepublish.representation.CollectionTemplateReps;
 import com.hywa.pricepublish.representation.ResponseBase;
 import com.hywa.pricepublish.service.CollectionTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("collect/template")
@@ -24,6 +21,7 @@ public class CollectionTemplateController {
     public ResponseEntity<ResponseBase> createTemplate(@RequestBody CollectionTemplateRep templateRep,
                                                        @RequestParam String userId) {
         collectionTemplateService.save(templateRep, userId);
+
         ResponseBase responseBase = new ResponseBase();
         responseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
         return new ResponseEntity<>(responseBase, HttpStatus.OK);
@@ -33,13 +31,11 @@ public class CollectionTemplateController {
     public ResponseEntity<ResponseBase> findTemplates(@RequestParam String userId,
                                                       @RequestParam(defaultValue = "1") Integer pageNum,
                                                       @RequestParam(defaultValue = "10") Integer pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        List<CollectionTemplateRep> templateReps = collectionTemplateService.findByUserId(userId);
-        PageInfo<CollectionTemplateRep> templateRepPageInfo = new PageInfo<>(templateReps);
+        CollectionTemplateReps templateReps = collectionTemplateService.findByUserId(userId, pageNum, pageSize);
 
-        ResponseBase<PageInfo<CollectionTemplateRep>> responseBase = new ResponseBase<>();
+        ResponseBase<CollectionTemplateReps> responseBase = new ResponseBase<>();
         responseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
-        responseBase.setRetBody(templateRepPageInfo);
+        responseBase.setRetBody(templateReps);
         return new ResponseEntity<>(responseBase, HttpStatus.OK);
     }
 

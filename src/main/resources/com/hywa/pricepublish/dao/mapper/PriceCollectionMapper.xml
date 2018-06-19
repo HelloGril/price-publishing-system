@@ -13,6 +13,7 @@
         <result column="price_type" property="priceType" jdbcType="SMALLINT"/>
         <result column="market_id" property="marketId" jdbcType="CHAR"/>
         <result column="product_id" property="productId" jdbcType="CHAR"/>
+        <result column="history_id" property="historyId" jdbcType="CHAR"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -79,7 +80,7 @@
     price_type, market_id, product_id
   </sql>
     <select id="selectByExample" resultMap="BaseResultMap"
-            parameterType="com.hywa.pricepublish.dao.entity.Price_collectionExample">
+            parameterType="com.hywa.pricepublish.dao.entity.PriceCollectionExample">
         select
         <if test="distinct">
             distinct
@@ -103,7 +104,7 @@
     delete from price_collection
     where id = #{id,jdbcType=CHAR}
   </delete>
-    <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.Price_collectionExample">
+    <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.PriceCollectionExample">
         delete from price_collection
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -202,7 +203,7 @@
             #{priceCollection.price})
         </foreach>
     </insert>
-    <select id="countByExample" parameterType="com.hywa.pricepublish.dao.entity.Price_collectionExample"
+    <select id="countByExample" parameterType="com.hywa.pricepublish.dao.entity.PriceCollectionExample"
             resultType="java.lang.Integer">
         select count(*) from price_collection
         <if test="_parameter != null">

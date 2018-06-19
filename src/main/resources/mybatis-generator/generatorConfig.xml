@@ -66,6 +66,7 @@
         <!--<table tableName="country" domainObjectName="Country"></table>-->
         <!--<table tableName="collection_template" domainObjectName="CollectionTemplate"></table>-->
         <!--<table tableName="dict" domainObjectName="Dict"></table>-->
-        <!--<table tableName="collection_history" domainObjectName="CollectionHistory"></table>-->
+        <!--<table tableName="collection_history" domainObjectName="CollectionHistory">-->
+        <!--</table>-->
     </context>
 </generatorConfiguration>

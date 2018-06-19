@@ -1,5 +1,7 @@
 package com.hywa.pricepublish.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.hywa.pricepublish.common.ConstantPool;
 import com.hywa.pricepublish.common.UUIDUtils;
 import com.hywa.pricepublish.dao.entity.CollectionTemplate;
@@ -10,6 +12,7 @@ import com.hywa.pricepublish.dao.entity.TemplateProduct;
 import com.hywa.pricepublish.dao.mapper.CollectionTemplateMapper;
 import com.hywa.pricepublish.dao.mapper.TemplateProductMapper;
 import com.hywa.pricepublish.representation.CollectionTemplateRep;
+import com.hywa.pricepublish.representation.CollectionTemplateReps;
 import com.hywa.pricepublish.representation.ProductRep;
 import com.hywa.pricepublish.service.CollectionTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,24 +53,25 @@ public class CollectionTemplateServiceImpl implements CollectionTemplateService 
     }
 
     @Override
-    public List<CollectionTemplateRep> findByUserId(String userId) {
+    public CollectionTemplateReps findByUserId(String userId, Integer pageNum, Integer pageSize) {
         CollectionTemplateExample example = new CollectionTemplateExample();
         Criteria criteria = example.createCriteria();
         criteria.andIsDelEqualTo(ConstantPool.NOT_DEL);
         criteria.andCreateUserEqualTo(userId);
-
+        Page<CollectionTemplate> page = PageHelper.startPage(pageNum, pageSize, true);
+        long total = page.getTotal();
         List<CollectionTemplate> collectionTemplates = collectionTemplateMapper.selectByExample(example);
-        List<CollectionTemplateRep> collectionTemplateReps = new ArrayList<>();
+//TODO 分页
+        List<CollectionTemplateRep> collectionTemplateRepList = new ArrayList<>();
         collectionTemplates.forEach(collectionTemplate -> {
             CollectionTemplateRep collectionTemplateRep = new CollectionTemplateRep(collectionTemplate);
-            collectionTemplateReps.add(collectionTemplateRep);
+            collectionTemplateRepList.add(collectionTemplateRep);
         });
-
-        return collectionTemplateReps;
+        return new CollectionTemplateReps(collectionTemplateRepList);
     }
 
-    @Transactional
     @Override
+    @Transactional
     public void save(CollectionTemplateRep templateRep, String userId) {
         String templateId = UUIDUtils.randomUUID();
 
