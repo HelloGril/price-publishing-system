@@ -174,73 +174,73 @@ public class UserAreaExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIsNull() {
-            addCriterion("role_id is null");
+        public Criteria andRegionIdIsNull() {
+            addCriterion("region_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIsNotNull() {
-            addCriterion("role_id is not null");
+        public Criteria andRegionIdIsNotNull() {
+            addCriterion("region_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdEqualTo(String value) {
-            addCriterion("role_id =", value, "roleId");
+        public Criteria andRegionIdEqualTo(String value) {
+            addCriterion("region_id =", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotEqualTo(String value) {
-            addCriterion("role_id <>", value, "roleId");
+        public Criteria andRegionIdNotEqualTo(String value) {
+            addCriterion("region_id <>", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdGreaterThan(String value) {
-            addCriterion("role_id >", value, "roleId");
+        public Criteria andRegionIdGreaterThan(String value) {
+            addCriterion("region_id >", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdGreaterThanOrEqualTo(String value) {
-            addCriterion("role_id >=", value, "roleId");
+        public Criteria andRegionIdGreaterThanOrEqualTo(String value) {
+            addCriterion("region_id >=", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLessThan(String value) {
-            addCriterion("role_id <", value, "roleId");
+        public Criteria andRegionIdLessThan(String value) {
+            addCriterion("region_id <", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLessThanOrEqualTo(String value) {
-            addCriterion("role_id <=", value, "roleId");
+        public Criteria andRegionIdLessThanOrEqualTo(String value) {
+            addCriterion("region_id <=", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLike(String value) {
-            addCriterion("role_id like", value, "roleId");
+        public Criteria andRegionIdLike(String value) {
+            addCriterion("region_id like", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotLike(String value) {
-            addCriterion("role_id not like", value, "roleId");
+        public Criteria andRegionIdNotLike(String value) {
+            addCriterion("region_id not like", value, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIn(List<String> values) {
-            addCriterion("role_id in", values, "roleId");
+        public Criteria andRegionIdIn(List<String> values) {
+            addCriterion("region_id in", values, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotIn(List<String> values) {
-            addCriterion("role_id not in", values, "roleId");
+        public Criteria andRegionIdNotIn(List<String> values) {
+            addCriterion("region_id not in", values, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdBetween(String value1, String value2) {
-            addCriterion("role_id between", value1, value2, "roleId");
+        public Criteria andRegionIdBetween(String value1, String value2) {
+            addCriterion("region_id between", value1, value2, "regionId");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotBetween(String value1, String value2) {
-            addCriterion("role_id not between", value1, value2, "roleId");
+        public Criteria andRegionIdNotBetween(String value1, String value2) {
+            addCriterion("region_id not between", value1, value2, "regionId");
             return (Criteria) this;
         }
 

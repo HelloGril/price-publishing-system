@@ -1,8 +1,8 @@
 //package com.hywa.pricepublish.config;
 //
-//import com.hywa.pricepublish.common.MD5Utils;
+//import com.hywa.pricepublish.common.utils.MD5Utils;
 //import com.hywa.pricepublish.dao.entity.User;
-//import com.hywa.pricepublish.service.UserService;
+//import com.hywa.pricepublish.service.login.UserService;
 //import org.apache.shiro.authc.*;
 //import org.apache.shiro.authc.credential.AllowAllCredentialsMatcher;
 //import org.apache.shiro.authz.AuthorizationInfo;
@@ -79,13 +79,13 @@
 //    @Override
 //    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 //        logger.info("##################执行Shiro权限认证##################");
-//        User user = (User) principals.getPrimaryPrincipal();
-//        Map<String, List<String>> userRolesAndPermissions = userService.findRolesAndPermissionsByUserName(user.getUsername());
-//        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-//        Set<String> roles = new HashSet<>(userRolesAndPermissions.get("roles"));
-//        Set<String> permissions = new HashSet<>(userRolesAndPermissions.get("permissions"));
-//        authorizationInfo.setRoles(roles);
-//        authorizationInfo.setStringPermissions(permissions);
-//        return authorizationInfo;
+////        User user = (User) principals.getPrimaryPrincipal();
+////        Map<String, List<String>> userRolesAndPermissions = userService.findRolesAndPermissionsByUserName(user.getUsername());
+////        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+////        Set<String> roles = new HashSet<>(userRolesAndPermissions.get("roles"));
+////        Set<String> permissions = new HashSet<>(userRolesAndPermissions.get("permissions"));
+////        authorizationInfo.setRoles(roles);
+////        authorizationInfo.setStringPermissions(permissions);
+////        return authorizationInfo;
 //    }
 //}

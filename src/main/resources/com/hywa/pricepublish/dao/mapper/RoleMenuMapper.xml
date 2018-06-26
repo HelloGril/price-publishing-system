@@ -80,10 +80,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.RoleMenuKey" >
+  <select id="selectCountByRoleId"  >
+    select count(*) from role_ref_menu where role_id = #{id,jdbcType=CHAR}
+  </select>
+  <!--根据角色id来批量删除-->
+  <delete id="deleteByPrimaryKey" >
     delete from role_ref_menu
     where role_id = #{roleId,jdbcType=CHAR}
-      and menu_id = #{menuId,jdbcType=CHAR}
+
   </delete>
   <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.RoleMenuExample" >
     delete from role_ref_menu
@@ -94,6 +98,17 @@
   <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.RoleMenuKey" >
     insert into role_ref_menu (role_id, menu_id)
     values (#{roleId,jdbcType=CHAR}, #{menuId,jdbcType=CHAR})
+  </insert>
+  <insert id="insertList">
+
+    insert into role_ref_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      role_id, menu_id
+    </trim>
+    VALUES
+    <foreach collection="keys" item="item" index="index" separator="," >
+      (#{roleId,jdbcType=CHAR}, #{item,jdbcType=CHAR})
+    </foreach>;
   </insert>
   <insert id="insertSelective" parameterType="com.hywa.pricepublish.dao.entity.RoleMenuKey" >
     insert into role_ref_menu

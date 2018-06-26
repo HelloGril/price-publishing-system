@@ -17,7 +17,7 @@ public class ProductRep {
     public ProductRep(Product product) {
         this.setProductId(product.getId());
         this.setProductName(product.getName());
-        this.setUnit(product.getSpecification());
+        this.setUnit(product.getUnit());
     }
 
     public BigDecimal getPrice() {

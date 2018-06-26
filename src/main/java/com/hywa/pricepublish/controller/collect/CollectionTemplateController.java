@@ -4,7 +4,7 @@ import com.hywa.pricepublish.common.ConstantPool;
 import com.hywa.pricepublish.representation.CollectionTemplateRep;
 import com.hywa.pricepublish.representation.CollectionTemplateReps;
 import com.hywa.pricepublish.representation.ResponseBase;
-import com.hywa.pricepublish.service.CollectionTemplateService;
+import com.hywa.pricepublish.service.collect.CollectionTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class CollectionTemplateController {
         return new ResponseEntity<>(responseBase, HttpStatus.OK);
     }
 
-    @GetMapping("/findTemplates")
+    @GetMapping("/findList")
     public ResponseEntity<ResponseBase> findTemplates(@RequestParam String userId,
                                                       @RequestParam(defaultValue = "1") Integer pageNum,
                                                       @RequestParam(defaultValue = "10") Integer pageSize) {
@@ -39,7 +39,7 @@ public class CollectionTemplateController {
         return new ResponseEntity<>(responseBase, HttpStatus.OK);
     }
 
-    @GetMapping("/findTemplate")
+    @GetMapping("/find")
     public ResponseEntity<ResponseBase> createTemplates(@RequestParam String templateId) {
         CollectionTemplateRep templateReps = collectionTemplateService.findByTemplateId(templateId);
 
@@ -47,5 +47,20 @@ public class CollectionTemplateController {
         responseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
         responseBase.setRetBody(templateReps);
         return new ResponseEntity<>(responseBase, HttpStatus.OK);
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<ResponseBase> updateTemplate(@RequestBody CollectionTemplateRep templateRep) {
+        try {
+            collectionTemplateService.update(templateRep);
+            ResponseBase responseBase = new ResponseBase();
+            responseBase.setRetHead(ConstantPool.SUCCESS_CODE, ConstantPool.SUCCESS_MESSAGE);
+            return new ResponseEntity<>(responseBase, HttpStatus.OK);
+        } catch (Exception e) {
+            ResponseBase responseBase = new ResponseBase();
+            responseBase.setRetHead(ConstantPool.FAILURE, "更新失败" + e.getMessage());
+            return new ResponseEntity<>(responseBase, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 }

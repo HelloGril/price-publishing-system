@@ -1,6 +1,7 @@
 package com.hywa.pricepublish.dao.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Role {
     private String id;
@@ -22,6 +23,17 @@ public class Role {
     private String updateUser;
 
     private Short isDel;
+
+    private List<String> roleMenuKeyList;
+
+    public List<String> getRoleMenuKeyList() {
+        return roleMenuKeyList;
+    }
+
+    public void setRoleMenuKeyList(List<String> roleMenuKeyList) {
+
+        this.roleMenuKeyList = roleMenuKeyList;
+    }
 
     public String getId() {
         return id;

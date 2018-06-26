@@ -7,7 +7,7 @@ import java.util.Objects;
 public class MarketRep {
     private String marketId;
     private String marketName;
-    private Short marketType;
+    private String marketType;
     private String regionId;
     private Short regionType;
 
@@ -16,7 +16,8 @@ public class MarketRep {
 
     public MarketRep(Market market) {
         this.setMarketName(market.getName());
-        this.setMarketType(market.getType());
+        this.setMarketType(market.getMarketType());
+        this.setMarketId(market.getId());
     }
 
     private void setMarketName(String name) {
@@ -27,11 +28,11 @@ public class MarketRep {
         return marketName;
     }
 
-    public Short getMarketType() {
+    public String getMarketType() {
         return marketType;
     }
 
-    public void setMarketType(Short marketType) {
+    public void setMarketType(String marketType) {
         this.marketType = marketType;
     }
 

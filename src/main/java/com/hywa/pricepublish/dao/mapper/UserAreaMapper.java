@@ -28,6 +28,4 @@ public interface UserAreaMapper {
     int updateByPrimaryKeySelective(UserArea record);
 
     int updateByPrimaryKey(UserArea record);
-
-    UserArea findUserArea(String userId);
 }

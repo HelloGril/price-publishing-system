@@ -315,133 +315,133 @@ public class MenuExample {
             return (Criteria) this;
         }
 
-        public Criteria andCodeIsNull() {
-            addCriterion("code is null");
+        public Criteria andSortIsNull() {
+            addCriterion("sort is null");
             return (Criteria) this;
         }
 
-        public Criteria andCodeIsNotNull() {
-            addCriterion("code is not null");
+        public Criteria andSortIsNotNull() {
+            addCriterion("sort is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCodeEqualTo(Short value) {
-            addCriterion("code =", value, "code");
+        public Criteria andSortEqualTo(Short value) {
+            addCriterion("sort =", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeNotEqualTo(Short value) {
-            addCriterion("code <>", value, "code");
+        public Criteria andSortNotEqualTo(Short value) {
+            addCriterion("sort <>", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeGreaterThan(Short value) {
-            addCriterion("code >", value, "code");
+        public Criteria andSortGreaterThan(Short value) {
+            addCriterion("sort >", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeGreaterThanOrEqualTo(Short value) {
-            addCriterion("code >=", value, "code");
+        public Criteria andSortGreaterThanOrEqualTo(Short value) {
+            addCriterion("sort >=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeLessThan(Short value) {
-            addCriterion("code <", value, "code");
+        public Criteria andSortLessThan(Short value) {
+            addCriterion("sort <", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeLessThanOrEqualTo(Short value) {
-            addCriterion("code <=", value, "code");
+        public Criteria andSortLessThanOrEqualTo(Short value) {
+            addCriterion("sort <=", value, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeIn(List<Short> values) {
-            addCriterion("code in", values, "code");
+        public Criteria andSortIn(List<Short> values) {
+            addCriterion("sort in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeNotIn(List<Short> values) {
-            addCriterion("code not in", values, "code");
+        public Criteria andSortNotIn(List<Short> values) {
+            addCriterion("sort not in", values, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeBetween(Short value1, Short value2) {
-            addCriterion("code between", value1, value2, "code");
+        public Criteria andSortBetween(Short value1, Short value2) {
+            addCriterion("sort between", value1, value2, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andCodeNotBetween(Short value1, Short value2) {
-            addCriterion("code not between", value1, value2, "code");
+        public Criteria andSortNotBetween(Short value1, Short value2) {
+            addCriterion("sort not between", value1, value2, "sort");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andIconIsNull() {
+            addCriterion("icon is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andIconIsNotNull() {
+            addCriterion("icon is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(String value) {
-            addCriterion("type =", value, "type");
+        public Criteria andIconEqualTo(String value) {
+            addCriterion("icon =", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(String value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andIconNotEqualTo(String value) {
+            addCriterion("icon <>", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(String value) {
-            addCriterion("type >", value, "type");
+        public Criteria andIconGreaterThan(String value) {
+            addCriterion("icon >", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andIconGreaterThanOrEqualTo(String value) {
+            addCriterion("icon >=", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(String value) {
-            addCriterion("type <", value, "type");
+        public Criteria andIconLessThan(String value) {
+            addCriterion("icon <", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(String value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andIconLessThanOrEqualTo(String value) {
+            addCriterion("icon <=", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLike(String value) {
-            addCriterion("type like", value, "type");
+        public Criteria andIconLike(String value) {
+            addCriterion("icon like", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotLike(String value) {
-            addCriterion("type not like", value, "type");
+        public Criteria andIconNotLike(String value) {
+            addCriterion("icon not like", value, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<String> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andIconIn(List<String> values) {
+            addCriterion("icon in", values, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<String> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andIconNotIn(List<String> values) {
+            addCriterion("icon not in", values, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(String value1, String value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andIconBetween(String value1, String value2) {
+            addCriterion("icon between", value1, value2, "icon");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(String value1, String value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andIconNotBetween(String value1, String value2) {
+            addCriterion("icon not between", value1, value2, "icon");
             return (Criteria) this;
         }
 
@@ -755,63 +755,63 @@ public class MenuExample {
             return (Criteria) this;
         }
 
-        public Criteria andTyoeIsNull() {
-            addCriterion("tyoe is null");
+        public Criteria andTypeIsNull() {
+            addCriterion("type is null");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeIsNotNull() {
-            addCriterion("tyoe is not null");
+        public Criteria andTypeIsNotNull() {
+            addCriterion("type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeEqualTo(Short value) {
-            addCriterion("tyoe =", value, "tyoe");
+        public Criteria andTypeEqualTo(Short value) {
+            addCriterion("type =", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeNotEqualTo(Short value) {
-            addCriterion("tyoe <>", value, "tyoe");
+        public Criteria andTypeNotEqualTo(Short value) {
+            addCriterion("type <>", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeGreaterThan(Short value) {
-            addCriterion("tyoe >", value, "tyoe");
+        public Criteria andTypeGreaterThan(Short value) {
+            addCriterion("type >", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeGreaterThanOrEqualTo(Short value) {
-            addCriterion("tyoe >=", value, "tyoe");
+        public Criteria andTypeGreaterThanOrEqualTo(Short value) {
+            addCriterion("type >=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeLessThan(Short value) {
-            addCriterion("tyoe <", value, "tyoe");
+        public Criteria andTypeLessThan(Short value) {
+            addCriterion("type <", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeLessThanOrEqualTo(Short value) {
-            addCriterion("tyoe <=", value, "tyoe");
+        public Criteria andTypeLessThanOrEqualTo(Short value) {
+            addCriterion("type <=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeIn(List<Short> values) {
-            addCriterion("tyoe in", values, "tyoe");
+        public Criteria andTypeIn(List<Short> values) {
+            addCriterion("type in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeNotIn(List<Short> values) {
-            addCriterion("tyoe not in", values, "tyoe");
+        public Criteria andTypeNotIn(List<Short> values) {
+            addCriterion("type not in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeBetween(Short value1, Short value2) {
-            addCriterion("tyoe between", value1, value2, "tyoe");
+        public Criteria andTypeBetween(Short value1, Short value2) {
+            addCriterion("type between", value1, value2, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTyoeNotBetween(Short value1, Short value2) {
-            addCriterion("tyoe not between", value1, value2, "tyoe");
+        public Criteria andTypeNotBetween(Short value1, Short value2) {
+            addCriterion("type not between", value1, value2, "type");
             return (Criteria) this;
         }
     }

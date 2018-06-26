@@ -5,7 +5,8 @@
         <id column="id" property="id" jdbcType="CHAR"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="code" property="code" jdbcType="VARCHAR"/>
-        <result column="type" property="type" jdbcType="SMALLINT"/>
+        <result column="market_type" property="marketType" jdbcType="SMALLINT"/>
+        <result column="price_type" property="priceType" jdbcType="SMALLINT"/>
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
         <result column="create_user" property="createUser" jdbcType="CHAR"/>
@@ -75,7 +76,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, name, code, type, create_time, update_time, create_user, update_user, region_id, 
+    id, name, code, market_type, price_type, create_time, update_time, create_user, update_user, region_id,
     is_del, region_type
   </sql>
     <select id="selectByExample" resultMap="BaseResultMap"
@@ -207,6 +208,10 @@
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
+    </select>
+    <select id="selectNameById" resultType="java.lang.String">
+        select name from market
+        where id = #{marketId}
     </select>
     <update id="updateByExampleSelective" parameterType="map">
         update market

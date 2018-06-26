@@ -315,63 +315,63 @@ public class MarketExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
+        public Criteria andMarketTypeIsNull() {
+            addCriterion("market_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
+        public Criteria andMarketTypeIsNotNull() {
+            addCriterion("market_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Short value) {
-            addCriterion("type =", value, "type");
+        public Criteria andMarketTypeEqualTo(String value) {
+            addCriterion("market_type =", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Short value) {
-            addCriterion("type <>", value, "type");
+        public Criteria andMarketTypeNotEqualTo(String value) {
+            addCriterion("market_type <>", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Short value) {
-            addCriterion("type >", value, "type");
+        public Criteria andMarketTypeGreaterThan(String value) {
+            addCriterion("market_type >", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Short value) {
-            addCriterion("type >=", value, "type");
+        public Criteria andMarketTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("market_type >=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Short value) {
-            addCriterion("type <", value, "type");
+        public Criteria andMarketTypeLessThan(String value) {
+            addCriterion("market_type <", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Short value) {
-            addCriterion("type <=", value, "type");
+        public Criteria andMarketTypeLessThanOrEqualTo(String value) {
+            addCriterion("market_type <=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Short> values) {
-            addCriterion("type in", values, "type");
+        public Criteria andMarketTypeIn(List<String> values) {
+            addCriterion("market_type in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Short> values) {
-            addCriterion("type not in", values, "type");
+        public Criteria andMarketTypeNotIn(List<String> values) {
+            addCriterion("market_type not in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Short value1, Short value2) {
-            addCriterion("type between", value1, value2, "type");
+        public Criteria andMarketTypeBetween(String value1, Short value2) {
+            addCriterion("market_type between", value1, value2, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Short value1, Short value2) {
-            addCriterion("type not between", value1, value2, "type");
+        public Criteria andMarketTypeNotBetween(String value1, Short value2) {
+            addCriterion("market_type not between", value1, value2, "type");
             return (Criteria) this;
         }
 

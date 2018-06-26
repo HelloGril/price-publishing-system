@@ -16,7 +16,7 @@ public class PriceCollection {
 
     private String description;
 
-    private String procudtId;
+    private String unit;
 
     private BigDecimal price;
 
@@ -27,6 +27,14 @@ public class PriceCollection {
     private String productId;
 
     private String historyId;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 
     public String getId() {
         return id;
@@ -74,14 +82,6 @@ public class PriceCollection {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
-    }
-
-    public String getProcudtId() {
-        return procudtId;
-    }
-
-    public void setProcudtId(String procudtId) {
-        this.procudtId = procudtId == null ? null : procudtId.trim();
     }
 
     public BigDecimal getPrice() {

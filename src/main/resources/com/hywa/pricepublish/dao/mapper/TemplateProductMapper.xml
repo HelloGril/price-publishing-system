@@ -101,7 +101,7 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.TemplateProduct">
-    insert into template_ref_product (id, template_id, product_id
+    insert ignore into template_ref_product (id, template_id, product_id
       )
     values (#{id,jdbcType=VARCHAR}, #{templateId,jdbcType=VARCHAR}, #{productId,jdbcType=VARCHAR}
       )

@@ -12,6 +12,10 @@
     <result column="create_User" property="createUser" jdbcType="CHAR" />
     <result column="update_User" property="updateUser" jdbcType="CHAR" />
     <result column="is_del" property="isDel" jdbcType="SMALLINT" />
+    <collection property="roleMenuKeyList" javaType="java.util.List" ofType="java.lang.String">
+      <id column="role_id" property="roleId" />
+      <result column="menu_id" property="menuId" />
+    </collection>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -75,12 +79,17 @@
     id, name, description, code, type, create_Time, update_Time, create_User, update_User, 
     is_del
   </sql>
+  <!--联合查询，将角色的菜单也查询出来-->
+  <sql id="leftJoin_Column_List" >
+    ri.id, ri.name, ri.description, ri.code, ri.type, ri.create_Time, ri.update_Time,ri.create_User, ri.update_User,
+    ri.is_del,rr.role_id,rr.menu_id
+  </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hywa.pricepublish.dao.entity.RoleExample" >
     select
     <if test="distinct" >
       distinct
     </if>
-    <include refid="Base_Column_List" />
+    <include refid="leftJoin_Column_List" />
     from role_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -89,14 +98,16 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <!--联合查询，讲多对多的关系映射上-->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
     select 
-    <include refid="Base_Column_List" />
-    from role_info
-    where id = #{id,jdbcType=CHAR}
+    <include refid="leftJoin_Column_List" />
+    from role_info ri LEFT JOIN role_ref_menu rr ON ri.id=rr.roleId
+    where ri.id = #{id,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from role_info
+    update role_info
+    set is_del = 1
     where id = #{id,jdbcType=CHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.hywa.pricepublish.dao.entity.RoleExample" >

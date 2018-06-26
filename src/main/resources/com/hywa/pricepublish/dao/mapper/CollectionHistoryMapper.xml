@@ -3,7 +3,7 @@
 <mapper namespace="com.hywa.pricepublish.dao.mapper.CollectionHistoryMapper" >
   <resultMap id="BaseResultMap" type="com.hywa.pricepublish.dao.entity.CollectionHistory" >
     <id column="id" property="id" jdbcType="CHAR" />
-    <result column="price_collect_id" property="priceCollectId" jdbcType="CHAR" />
+    <result column="price_collect_id" property="collectHistoryId" jdbcType="CHAR" />
     <result column="market_name" property="marketName" jdbcType="VARCHAR" />
     <result column="collection_time" property="collectionTime" jdbcType="TIMESTAMP" />
     <result column="is_del" property="isDel" jdbcType="SMALLINT" />
@@ -101,10 +101,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.hywa.pricepublish.dao.entity.CollectionHistory" >
-    insert into collection_history (id, price_collect_id, market_name, 
+    insert into collection_history (id, market_name,
       collection_time, is_del, user_id
       )
-    values (#{id,jdbcType=CHAR}, #{priceCollectId,jdbcType=CHAR}, #{marketName,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=CHAR},#{marketName,jdbcType=VARCHAR},
       #{collectionTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=SMALLINT}, #{userId,jdbcType=CHAR}
       )
   </insert>
@@ -114,7 +114,7 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="priceCollectId != null" >
+      <if test="collectHistoryId != null" >
         price_collect_id,
       </if>
       <if test="marketName != null" >
@@ -134,8 +134,8 @@
       <if test="id != null" >
         #{id,jdbcType=CHAR},
       </if>
-      <if test="priceCollectId != null" >
-        #{priceCollectId,jdbcType=CHAR},
+      <if test="collectHistoryId != null" >
+        #{collectHistoryId,jdbcType=CHAR},
       </if>
       <if test="marketName != null" >
         #{marketName,jdbcType=VARCHAR},
@@ -163,8 +163,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=CHAR},
       </if>
-      <if test="record.priceCollectId != null" >
-        price_collect_id = #{record.priceCollectId,jdbcType=CHAR},
+      <if test="record.collectHistoryId != null" >
+        price_collect_id = #{record.collectHistoryId,jdbcType=CHAR},
       </if>
       <if test="record.marketName != null" >
         market_name = #{record.marketName,jdbcType=VARCHAR},
@@ -186,7 +186,7 @@
   <update id="updateByExample" parameterType="map" >
     update collection_history
     set id = #{record.id,jdbcType=CHAR},
-      price_collect_id = #{record.priceCollectId,jdbcType=CHAR},
+      price_collect_id = #{record.collectHistoryId,jdbcType=CHAR},
       market_name = #{record.marketName,jdbcType=VARCHAR},
       collection_time = #{record.collectionTime,jdbcType=TIMESTAMP},
       is_del = #{record.isDel,jdbcType=SMALLINT},
@@ -198,8 +198,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.hywa.pricepublish.dao.entity.CollectionHistory" >
     update collection_history
     <set >
-      <if test="priceCollectId != null" >
-        price_collect_id = #{priceCollectId,jdbcType=CHAR},
+      <if test="collectHistoryId != null" >
+        price_collect_id = #{collectHistoryId,jdbcType=CHAR},
       </if>
       <if test="marketName != null" >
         market_name = #{marketName,jdbcType=VARCHAR},
@@ -218,7 +218,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hywa.pricepublish.dao.entity.CollectionHistory" >
     update collection_history
-    set price_collect_id = #{priceCollectId,jdbcType=CHAR},
+    set price_collect_id = #{collectHistoryId,jdbcType=CHAR},
       market_name = #{marketName,jdbcType=VARCHAR},
       collection_time = #{collectionTime,jdbcType=TIMESTAMP},
       is_del = #{isDel,jdbcType=SMALLINT},

@@ -15,8 +15,8 @@ public class DictReps {
         return list;
     }
 
-    public void setList(List<DictRep> list) {
-        list = new ArrayList<>(list);
+    public void setList(List<DictRep> dictRepList) {
+        list = new ArrayList<>(dictRepList);
     }
 
     @Override

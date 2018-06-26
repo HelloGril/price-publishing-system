@@ -13,11 +13,11 @@ public class UserAreaKey {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getregionId() {
+    public String getRegionId() {
         return regionId;
     }
 
-    public void setregionId(String regionId) {
+    public void setRegionId(String regionId) {
         this.regionId = regionId == null ? null : regionId.trim();
     }
 }

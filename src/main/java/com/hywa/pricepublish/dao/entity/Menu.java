@@ -9,21 +9,21 @@ public class Menu {
 
     private String description;
 
-    private Short code;
+    private Short sort;
 
-    private String type;
+    private String icon;
 
     private Date createTime;
 
     private Date updateTime;
 
-    private Short isDel;
+    private short isDel;
 
-    private Short status;
+    private short status;
 
     private String parentId;
 
-    private Short tyoe;
+    private short type;
 
     public String getId() {
         return id;
@@ -49,20 +49,20 @@ public class Menu {
         this.description = description == null ? null : description.trim();
     }
 
-    public Short getCode() {
-        return code;
+    public Short getSort() {
+        return sort;
     }
 
-    public void setCode(Short code) {
-        this.code = code;
+    public void setSort(Short sort) {
+        this.sort = sort;
     }
 
-    public String getType() {
-        return type;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setIcon(String icon) {
+        this.icon = icon == null ? null : icon.trim();
     }
 
     public Date getCreateTime() {
@@ -105,11 +105,11 @@ public class Menu {
         this.parentId = parentId == null ? null : parentId.trim();
     }
 
-    public Short getTyoe() {
-        return tyoe;
+    public Short getType() {
+        return type;
     }
 
-    public void setTyoe(Short tyoe) {
-        this.tyoe = tyoe;
+    public void setType(Short type) {
+        this.type = type;
     }
 }

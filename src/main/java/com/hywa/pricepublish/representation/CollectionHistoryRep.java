@@ -1,38 +1,38 @@
 package com.hywa.pricepublish.representation;
 
+import com.hywa.pricepublish.common.utils.DateUtils;
 import com.hywa.pricepublish.dao.entity.CollectionHistory;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class CollectionHistoryRep {
-    private Date collectTime;
-    private String priceCollectId;
+    private String collectTime;
+    private String collectHistoryId;
     private String marketName;
 
     public CollectionHistoryRep() {
     }
 
     public CollectionHistoryRep(CollectionHistory collectionHistory) {
-        this.setCollectTime(collectionHistory.getCollectionTime());
-        this.setPriceCollectId(collectionHistory.getPriceCollectId());
+        this.setCollectTime(DateUtils.formatDate(collectionHistory.getCollectionTime(), DateUtils.DEFAULT_FORMAT));
+        this.setCollectHistoryId(collectionHistory.getId());
         this.setMarketName(collectionHistory.getMarketName());
     }
 
-    public Date getCollectTime() {
+    public String getCollectTime() {
         return collectTime;
     }
 
-    public void setCollectTime(Date collectTime) {
+    public void setCollectTime(String collectTime) {
         this.collectTime = collectTime;
     }
 
-    public String getPriceCollectId() {
-        return priceCollectId;
+    public String getCollectHistoryId() {
+        return collectHistoryId;
     }
 
-    public void setPriceCollectId(String priceCollectId) {
-        this.priceCollectId = priceCollectId;
+    public void setCollectHistoryId(String collectHistoryId) {
+        this.collectHistoryId = collectHistoryId;
     }
 
     public String getMarketName() {
@@ -49,21 +49,21 @@ public class CollectionHistoryRep {
         if (o == null || getClass() != o.getClass()) return false;
         CollectionHistoryRep that = (CollectionHistoryRep) o;
         return Objects.equals(collectTime, that.collectTime) &&
-                Objects.equals(priceCollectId, that.priceCollectId) &&
+                Objects.equals(collectHistoryId, that.collectHistoryId) &&
                 Objects.equals(marketName, that.marketName);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(collectTime, priceCollectId, marketName);
+        return Objects.hash(collectTime, collectHistoryId, marketName);
     }
 
     @Override
     public String toString() {
         return "CollectionHistoryRep{" +
                 "collectTime='" + collectTime + '\'' +
-                ", priceCollectId='" + priceCollectId + '\'' +
+                ", collectHistoryId='" + collectHistoryId + '\'' +
                 ", marketName='" + marketName + '\'' +
                 '}';
     }

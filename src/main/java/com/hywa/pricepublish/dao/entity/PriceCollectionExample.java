@@ -13,7 +13,7 @@ public class PriceCollectionExample {
     protected List<Criteria> oredCriteria;
 
     public PriceCollectionExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {
@@ -118,6 +118,11 @@ public class PriceCollectionExample {
 
         public Criteria andIdEqualTo(String value) {
             addCriterion("id =", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andHistoryIdIsEqualsTo(String value) {
+            addCriterion("history_id =", value, "historyId");
             return (Criteria) this;
         }
 
@@ -503,76 +508,6 @@ public class PriceCollectionExample {
 
         public Criteria andDescriptionNotBetween(String value1, String value2) {
             addCriterion("description not between", value1, value2, "description");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdIsNull() {
-            addCriterion("procudt_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdIsNotNull() {
-            addCriterion("procudt_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdEqualTo(String value) {
-            addCriterion("procudt_id =", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdNotEqualTo(String value) {
-            addCriterion("procudt_id <>", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdGreaterThan(String value) {
-            addCriterion("procudt_id >", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdGreaterThanOrEqualTo(String value) {
-            addCriterion("procudt_id >=", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdLessThan(String value) {
-            addCriterion("procudt_id <", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdLessThanOrEqualTo(String value) {
-            addCriterion("procudt_id <=", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdLike(String value) {
-            addCriterion("procudt_id like", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdNotLike(String value) {
-            addCriterion("procudt_id not like", value, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdIn(List<String> values) {
-            addCriterion("procudt_id in", values, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdNotIn(List<String> values) {
-            addCriterion("procudt_id not in", values, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdBetween(String value1, String value2) {
-            addCriterion("procudt_id between", value1, value2, "procudtId");
-            return (Criteria) this;
-        }
-
-        public Criteria andProcudtIdNotBetween(String value1, String value2) {
-            addCriterion("procudt_id not between", value1, value2, "procudtId");
             return (Criteria) this;
         }
 

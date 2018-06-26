@@ -9,7 +9,9 @@ public class Market {
 
     private String code;
 
-    private Short type;
+    private String marketType;
+
+    private String priceType;
 
     private Date createTime;
 
@@ -24,6 +26,22 @@ public class Market {
     private Short isDel;
 
     private Short regionType;
+
+    public String getPriceType() {
+        return priceType;
+    }
+
+    public void setPriceType(String priceType) {
+        this.priceType = priceType;
+    }
+
+    public String getMarketType() {
+        return marketType;
+    }
+
+    public void setMarketType(String marketType) {
+        this.marketType = marketType;
+    }
 
     public String getId() {
         return id;
@@ -47,14 +65,6 @@ public class Market {
 
     public void setCode(String code) {
         this.code = code == null ? null : code.trim();
-    }
-
-    public Short getType() {
-        return type;
-    }
-
-    public void setType(Short type) {
-        this.type = type;
     }
 
     public Date getCreateTime() {

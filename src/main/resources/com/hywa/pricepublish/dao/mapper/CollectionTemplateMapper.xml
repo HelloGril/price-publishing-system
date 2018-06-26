@@ -241,16 +241,8 @@
     </update>
     <update id="updateByExample" parameterType="map">
         update collection_template
-        set id = #{record.id,jdbcType=CHAR},
-        user_id = #{record.userId,jdbcType=CHAR},
-        market_id = #{record.marketId,jdbcType=CHAR},
-        product_id = #{record.productId,jdbcType=CHAR},
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-        create_user = #{record.createUser,jdbcType=CHAR},
+        set update_time = #{record.updateTime,jdbcType=TIMESTAMP},
         update_user = #{record.updateUser,jdbcType=CHAR},
-        is_del = #{record.isDel,jdbcType=SMALLINT},
-        type = #{record.type,jdbcType=SMALLINT},
         name = #{record.name,jdbcType=VARCHAR}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>

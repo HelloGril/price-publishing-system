@@ -7,7 +7,7 @@ public class Dict {
 
     private String code;
 
-    private String dicttypeid;
+    private String dictTypeId;
 
     public String getId() {
         return id;
@@ -33,11 +33,11 @@ public class Dict {
         this.code = code == null ? null : code.trim();
     }
 
-    public String getDicttypeid() {
-        return dicttypeid;
+    public String getDictTypeId() {
+        return dictTypeId;
     }
 
-    public void setDicttypeid(String dicttypeid) {
-        this.dicttypeid = dicttypeid == null ? null : dicttypeid.trim();
+    public void setDictTypeId(String dictTypeId) {
+        this.dictTypeId = dictTypeId == null ? null : dictTypeId.trim();
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public class CollectionTemplateReps {
     private List<CollectionTemplateRep> list;
 
-    private Integer total;
+    private Long total;
 
     public CollectionTemplateReps() {
     }
@@ -15,16 +15,16 @@ public class CollectionTemplateReps {
         this.setList(list);
     }
 
-    public CollectionTemplateReps(List<CollectionTemplateRep> list, Integer total) {
+    public CollectionTemplateReps(List<CollectionTemplateRep> list, Long total) {
         this(list);
         this.setTotal(total);
     }
 
-    public Integer getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 
@@ -32,8 +32,8 @@ public class CollectionTemplateReps {
         return list;
     }
 
-    public void setList(List<CollectionTemplateRep> list) {
-        this.list = new ArrayList<>(list);
+    public void setList(List<CollectionTemplateRep> collectionTemplateReps) {
+        this.list = new ArrayList<>(collectionTemplateReps);
     }
 
 }

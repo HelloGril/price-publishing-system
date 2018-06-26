@@ -1,6 +1,6 @@
 package com.hywa.pricepublish.representation;
 
-import com.hywa.pricepublish.common.DateUtils;
+import com.hywa.pricepublish.common.utils.DateUtils;
 import com.hywa.pricepublish.dao.entity.CollectionTemplate;
 
 import java.util.List;

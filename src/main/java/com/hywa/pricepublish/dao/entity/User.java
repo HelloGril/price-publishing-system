@@ -1,9 +1,9 @@
 package com.hywa.pricepublish.dao.entity;
 
-import com.hywa.pricepublish.common.MD5Utils;
-import com.hywa.pricepublish.common.Sex;
-import com.hywa.pricepublish.common.UUIDUtils;
+import com.hywa.pricepublish.common.enums.CommonEnum;
 import com.hywa.pricepublish.common.exception.SexInputException;
+import com.hywa.pricepublish.common.utils.StringUtils;
+import com.hywa.pricepublish.common.utils.UUIDUtils;
 import com.hywa.pricepublish.representation.UserRep;
 
 import java.util.Date;
@@ -45,13 +45,13 @@ public class User {
     public User(UserRep userRep) throws SexInputException {
         this.setId(UUIDUtils.randomUUID());
         this.setName(userRep.getName());
-        this.setPassword(MD5Utils.md5(userRep.getPwd()));
+        this.setPassword(StringUtils.md5(userRep.getPwd()));
         this.setName(userRep.getName());
         this.setAge(userRep.getAge());
         this.setWorkUnit(userRep.getWorkUnit());
         this.setJob(userRep.getJobTitle());
         if (userRep.getSex() != null)
-            this.setSex(Sex.getIndex(userRep.getSex()));
+            this.setSex(CommonEnum.getIndex(userRep.getSex()));
     }
 
 

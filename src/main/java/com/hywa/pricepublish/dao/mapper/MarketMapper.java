@@ -29,4 +29,6 @@ public interface MarketMapper {
     int updateByPrimaryKey(Market record);
 
     List<Market> selectMarketsByTypeAndRegion(String marketTypeCode, String regionId);
+
+    String selectNameById(String marketId);
 }
